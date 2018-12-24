@@ -2,8 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Ariel Anderson & Jason Leo`,
     eventStart: `06/29/2019`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Wedding Website for Jason Leo and Ariel Anderson.`,
+    author: `@xezian`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
