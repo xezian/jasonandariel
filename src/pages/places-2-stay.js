@@ -1,13 +1,24 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import AirbnbForm from '../components/AirbnbForm'
 import SEO from '../components/seo'
+
+const List = styled.ul`
+  li {
+    a {
+      font-family: 'Josefin Slab', georgia, serif;
+      color: rust;
+    }
+  }
+`
 
 const PlacesToStay = () => (
   <Layout>
     <SEO title="Places to Stay" />
-    <div style={{ maxWidth: `80vw` }}>
+    <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
       <h1>Places to Stay</h1>
       <p>"We'd love to attend y'all's wedding, but where will we stay?"</p>
       <p>
@@ -20,52 +31,14 @@ const PlacesToStay = () => (
       <ul
         style={{
           textAlign: `center`,
-          maxWidth: `50vw`,
+          maxWidth: `35vw`,
           margin: `0 auto`,
           listStyleType: `none`,
         }}
       >
         <hr />
         <li>
-          <details>
-            <summary style={{ fontFamily: `'Major Mono Display', monospace` }}>
-              Airbnb
-            </summary>
-            <br />
-            <form>
-              from:
-              <br />
-              <input
-                style={{ textAlign: `center` }}
-                name="from"
-                defaultValue="2019-06-28"
-                type="date"
-              />
-              <br />
-              to:
-              <br />
-              <input
-                style={{ textAlign: `center` }}
-                name="to"
-                defaultValue="2019-07-01"
-                type="date"
-              />
-              <br />
-              <input name="adults" placeholder="# Adults" type="numeric" />
-              <br />
-              <input name="children" placeholder="# Children" type="numeric" />
-            </form>
-            <button
-              onClick={() => {
-                alert('sorry, not yet!')
-              }}
-            >
-              See Listings
-            </button>
-            <br />
-            <br />
-            <hr />
-          </details>
+          <AirbnbForm />
         </li>
         <li>
           <details>
@@ -73,13 +46,53 @@ const PlacesToStay = () => (
               Hotels
             </summary>
             <br />
-            <ul>
-              <li>The Saxtons River Inn</li>
-              <li>Harvest Barn Inn</li>
-              <li>Copper Kettle B&B</li>
-              <li>Hickory Ridge House</li>
-              <li>Rodeway Inn</li>
-            </ul>
+            <List>
+              <li>
+                <a
+                  href="https://www.saxtonsriverinn.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Saxtons River Inn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.saxtonsriverinn.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Harvest Barn Inn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.harvestbarninn.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Copper Kettle B&B
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://www.hickoryridgehouse.com/Site/Home.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Hickory Ridge House
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.booking.com/hotel/us/everyday-inn.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Rodeway Inn
+                </a>
+              </li>
+            </List>
             <hr />
           </details>
         </li>
