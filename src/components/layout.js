@@ -13,7 +13,8 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             eventStart
-            title
+            bride
+            groom
           }
         }
       }
@@ -22,7 +23,8 @@ const Layout = ({ children }) => (
       <>
         <Header
           eventStart={data.site.siteMetadata.eventStart}
-          siteTitle={data.site.siteMetadata.title}
+          bride={data.site.siteMetadata.bride}
+          groom={data.site.siteMetadata.groom}
         />
         <div
           style={{
@@ -30,7 +32,6 @@ const Layout = ({ children }) => (
             flexDirection: `column`,
             justifyContent: `space-between`,
             alignItems: `center`,
-            maxWidth: 960,
             padding: `1.45rem 1.0875rem`,
             paddingTop: 0,
           }}

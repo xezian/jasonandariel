@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import cutout from '../images/desert.svg'
 
-const Header = ({ siteTitle, eventStart }) => (
+const Header = ({ bride, groom, eventStart }) => (
   <>
     <div
       style={{
-        background: `#123456`,
-        height: `70vh`,
+        background: `#052f46`,
+        height: `600px`,
       }}
     >
       <div
@@ -16,7 +16,6 @@ const Header = ({ siteTitle, eventStart }) => (
           display: `flex`,
           flexDirection: `column`,
           alignItems: `center`,
-          maxWidth: 960,
           padding: `1.45rem 1.0875rem`,
         }}
       >
@@ -24,7 +23,8 @@ const Header = ({ siteTitle, eventStart }) => (
           <Link
             to="/"
             style={{
-              color: `white`,
+              color: `#d1e6ef`,
+              textAlign: `center`,
               textDecoration: `none`,
               fontWeight: `lighter`,
               fontSize: `50px`,
@@ -32,29 +32,36 @@ const Header = ({ siteTitle, eventStart }) => (
               fontFamily: `'Dancing Script', cursive`,
             }}
           >
-            {siteTitle}
-            <div
-              style={{
-                maxWidth: `400px`,
-                marginBottom: `1.45rem`,
-                marginTop: `1.45rem`,
-                marginLeft: `auto`,
-                marginRight: `auto`,
-              }}
-            >
-              <img src={cutout} alt="jasonandariel" />
-            </div>
+            <p>
+              {bride}
+              <br />&<br />
+              {groom}
+            </p>
           </Link>
         </h1>
+        <div
+          style={{
+            maxWidth: `400px`,
+            marginBottom: `.1rem`,
+            marginTop: `.2rem`,
+            marginLeft: `auto`,
+            marginRight: `auto`,
+          }}
+        >
+          <img src={cutout} alt="jasonandariel" />
+        </div>
+        <h3
+          style={{
+            color: `#d1e6ef`,
+            textAlign: `center`,
+            position: `relative`,
+            bottom: `0`,
+          }}
+        >
+          {eventStart}
+        </h3>
       </div>
     </div>
-    <h3
-      style={{
-        textAlign: `center`,
-      }}
-    >
-      {eventStart}
-    </h3>
   </>
 )
 

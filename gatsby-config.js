@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Ariel Anderson & Jason Leo`,
+    title: `Jason & Ariel 2019`,
+    bride: `Ariel Anderson`,
+    groom: `Jason Leo`,
     eventStart: `06/29/2019`,
     description: `Wedding Website for Jason Leo and Ariel Anderson.`,
     author: `@xezian`,
