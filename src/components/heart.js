@@ -13,13 +13,13 @@ import Img from 'gatsby-image'
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = props => (
+const Heart = props => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "images/tucson.jpg" }) {
+        placeholderImage: file(relativePath: { eq: "heart.png" }) {
           childImageSharp {
-            fixed(width: 400) {
+            fixed(width: 20) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -29,4 +29,4 @@ const Image = props => (
     render={data => <Img fixed={data.placeholderImage.childImageSharp.fixed} />}
   />
 )
-export default Image
+export default Heart

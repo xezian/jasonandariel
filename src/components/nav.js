@@ -8,8 +8,7 @@ const NavStyles = styled.div`
   flex-direction: row;
   background-color: #6d003172;
   justify-content: space-between;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  padding: 2vh 5vw;
   border-top: 17px ridge #b03045af;
   border-bottom: 17px groove #b03045af;
   margin-bottom: 20px;
@@ -49,7 +48,7 @@ export default class Nav extends Component {
         <Link to="/places-2-stay/">Places to Stay</Link>
         <Link to="/things-2-do/">Things to Do</Link>
         <Link to="/registry/">Gift Registry</Link>
-        <Link to="/rsvp/">RSVP</Link>
+        {/* <Link to="/rsvp/">RSVP</Link> */}
       </NavStyles>
     )
   }

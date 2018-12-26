@@ -115,6 +115,53 @@ const PlacesToStay = () => (
         </li>
         <hr />
       </ul>
+      <p>
+        The wedding itself will be held at{' '}
+        <a
+          href="https://www.google.com/maps/place/316+Thayer+Rd,+Westminster,+VT+05158/@43.121548,-72.4934147,17z"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ fontFamily: `inherit` }}
+        >
+          Jason's mother's house in Westminster, VT
+        </a>
+        , but there are many neighboring towns and villages that would still put
+        you within a very reasonable driving distance of the event.
+      </p>
+      <ul
+        style={{
+          textAlign: `center`,
+          maxWidth: `40vw`,
+          margin: `0 auto`,
+          listStyleType: `square`,
+        }}
+      >
+        <li>
+          15 to 25 minute drive:
+          <ul>
+            Saxton's River, VT <br />
+            Westminster West, VT
+            <br /> Bellows Falls, VT
+            <br />
+            Grafton, VT
+            <br /> Rockingham, VT
+            <br /> Walpole, NH
+          </ul>
+        </li>
+        <li>
+          25 to 40 minute drive:
+          <ul>
+            Putney, VT
+            <br /> Brattleboro, VT
+            <br />
+            Chester, VT
+            <br />
+            Springfield, VT
+            <br /> Keene, NH
+          </ul>
+        </li>
+        <hr />
+      </ul>
       <Link to="/">Go back to the homepage</Link>
     </div>
   </Layout>

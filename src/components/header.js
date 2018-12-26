@@ -1,6 +1,7 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import Heart from './heart'
 import cutout from '../images/desert.svg'
 
 const Header = ({ bride, groom, eventStart }) => (
@@ -8,7 +9,7 @@ const Header = ({ bride, groom, eventStart }) => (
     <div
       style={{
         background: `#052f46`,
-        height: `600px`,
+        height: `620px`,
       }}
     >
       <div
@@ -58,7 +59,12 @@ const Header = ({ bride, groom, eventStart }) => (
             bottom: `0`,
           }}
         >
+          <Link to="/">
+            <Heart />
+          </Link>
+          <br />
           {eventStart}
+          <br />
         </h3>
       </div>
     </div>

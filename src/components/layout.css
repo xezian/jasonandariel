@@ -205,6 +205,7 @@ html {
 }
 body {
   color: #000000cc;
+  background-color: #d1e6ef;
   font-family: 'Josefin Slab', georgia, serif;
   font-weight: bold;
   word-wrap: break-word;
@@ -213,6 +214,8 @@ body {
   -ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   -webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+  border-bottom: 17px groove #b03045af;
+  border-top: 17px ridge #b03045af;
 }
 img {
   max-width: 100%;

@@ -19,21 +19,19 @@ const Registry = () => (
         that!
       </p>
       <h3>Some options</h3>
-      <p>
-        * These options will transition to clickable links to the actual
-        registries, as we create them.
-      </p>
       <ul style={{ maxWidth: `30vw`, margin: `0 auto`, listStyleType: `none` }}>
         <hr />
         <li>
-          <h4>Travel Fund</h4>
-          for our Honeymoon in 2020
-        </li>
-        <li>
-          <h4>Music Gear Registry</h4>
-        </li>
-        <li>
-          <h4>Amazon Registry</h4>
+          <h4>
+            <a
+              style={{ fontFamily: `inherit` }}
+              href="https://www.amazon.com/wedding/share/jasonandariel"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Amazon Registry
+            </a>
+          </h4>
         </li>
         <hr />
       </ul>
