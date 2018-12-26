@@ -169,32 +169,49 @@ const PlacesToStay = () => (
           textAlign: `center`,
           maxWidth: `40vw`,
           margin: `0 auto`,
-          listStyleType: `square`,
+          listStyleType: `none`,
         }}
       >
         <li>
-          15 to 25 minute drive:
-          <ul>
-            Saxton's River, VT <br />
-            Westminster West, VT
-            <br /> Bellows Falls, VT
-            <br />
-            Grafton, VT
-            <br /> Rockingham, VT
-            <br /> Walpole, NH
-          </ul>
+          <details>
+            <summary>15 to 25 minute drive:</summary>
+            <ul
+              style={{
+                fontSize: `15px`,
+                lineHeight: `10px`,
+                listStyleType: `none`,
+              }}
+            >
+              <br />
+              <li>
+                Saxton's River, VT <br />
+              </li>
+              <li>Westminster West, VT</li>
+              <li>Bellows Falls, VT</li>
+              <li>Grafton, VT</li>
+              <li>Rockingham, VT</li>
+              <li>Walpole, NH</li>
+            </ul>
+          </details>
         </li>
         <li>
-          25 to 40 minute drive:
-          <ul>
-            Putney, VT
-            <br /> Brattleboro, VT
-            <br />
-            Chester, VT
-            <br />
-            Springfield, VT
-            <br /> Keene, NH
-          </ul>
+          <details>
+            <summary>25 to 40 minute drive:</summary>
+            <ul
+              style={{
+                fontSize: `15px`,
+                lineHeight: `10px`,
+                listStyleType: `none`,
+              }}
+            >
+              <br />
+              <li>Putney, VT</li>
+              <li>Brattleboro, VT</li>
+              <li>Chester, VT</li>
+              <li>Springfield, VT</li>
+              <li>Keene, NH</li>
+            </ul>
+          </details>
         </li>
         <hr />
       </ul>
