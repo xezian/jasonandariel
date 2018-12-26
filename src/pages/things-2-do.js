@@ -187,6 +187,16 @@ const ThingsToDo = () => (
             <li>
               <a
                 style={{ fontFamily: `inherit` }}
+                href="http://wunderbarvt.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Wunderbar
+              </a>
+            </li>
+            <li>
+              <a
+                style={{ fontFamily: `inherit` }}
                 href="https://www.jdmcclimentspub.com/"
                 target="_blank"
                 rel="noopener noreferrer"
