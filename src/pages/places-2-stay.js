@@ -85,6 +85,24 @@ const PlacesToStay = () => (
               </li>
               <li>
                 <a
+                  href="https://www.graftoninnvermont.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Grafton Inn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://putneyinn.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Putney Inn
+                </a>
+              </li>
+              <li>
+                <a
                   href="http://mooresinn.com/"
                   target="_blank"
                   rel="noopener noreferrer"
