@@ -48,227 +48,329 @@ const ThingsToDo = () => (
       <ul style={{ maxWidth: `40vw`, margin: `0 auto` }}>
         <hr />
         <li style={{ listStyleImage: `url(${activities})` }}>
-          <h4>Activities</h4>
-          <ul style={{ listStyleType: `none` }}>
-            <li>
-              <details>
-                <summary>Kayaking on the Connecticut River</summary>
-                <List>
-                  <li>
-                    <a
-                      href="https://www.vermontcanoetouringcenter.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Vermont Canoe Touring Center
-                    </a>
-                    <br />
-                    <p>≈ 30 minute drive South of Westminster</p>
-                  </li>
-                  <li>
-                    <a
-                      href="https://greatriveroutfitters.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Great River Outfitters
-                    </a>
-                    <br />
-                    <p>≈ 40 minute drive North of Westminster</p>
-                  </li>
-                </List>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Hiking Trails</summary>
-                <List>
-                  <li>
-                    <a
-                      href="http://www.nhfamilyhikes.com/hikes.php?hike=Mt.%20Kilburn%20(Fall%20Mountain)"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Mt. Kilburn (Fall Mountain)
-                    </a>
-                    <br />{' '}
-                    <p>
-                      Just over the river in Walpole, NH. Provides a picturesque
-                      view of downtown Bellows Falls.
-                    </p>
-                  </li>
-                  <li>
-                    <a
-                      href="http://putmta.org/trails/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Putney Mountain Trails
-                    </a>
-                    <br />
-                    <p>
-                      Some nice and relatively easy day hikes in the hills of
-                      Putney / North Westminster
-                    </p>
-                  </li>
-                </List>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Riding Bikes</summary>
-                <List>
-                  <li>
-                    <a
-                      href="https://www.westhillshop.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      West Hill Shop
-                    </a>
-                    <br />
-                    <p>
-                      Great resource for information, and they offer rentals!
-                    </p>
-                  </li>
-                  <li>
-                    <a
-                      href="https://greatriveroutfitters.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Bike Maps
-                    </a>
-                    <br />
-                    <p>
-                      Detailed 'Bicycle Suitability Maps' from Windham Regional
-                      Commission
-                    </p>
-                  </li>
-                </List>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Pottery, craft & art galleries</summary>
-                <List>
-                  <li>
-                    <p>
-                      Best to{' '}
+          <details>
+            <summary
+              style={{
+                width: `80%`,
+                display: `flex`,
+                flexDirection: `row`,
+                justifyContent: `space-around`,
+              }}
+            >
+              <h4>Activities</h4>
+            </summary>
+            <br />
+            <ul style={{ listStyleType: `none` }}>
+              <li>
+                <details>
+                  <summary>Kayaking on the Connecticut River</summary>
+                  <List>
+                    <li>
                       <a
-                        href="https://www.google.com/search?q=pottery+craft+art+gallery+southern+Vermont"
+                        href="https://www.vermontcanoetouringcenter.com/"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Google
-                      </a>{' '}
-                      those
-                    </p>
-                  </li>
-                </List>
-              </details>
-            </li>
-          </ul>
+                        Vermont Canoe Touring Center
+                      </a>
+                      <br />
+                      <p>≈ 30 minute drive South of Westminster</p>
+                    </li>
+                    <li>
+                      <a
+                        href="https://greatriveroutfitters.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Great River Outfitters
+                      </a>
+                      <br />
+                      <p>≈ 40 minute drive North of Westminster</p>
+                    </li>
+                  </List>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Hiking Trails</summary>
+                  <List>
+                    <li>
+                      <a
+                        href="http://www.nhfamilyhikes.com/hikes.php?hike=Mt.%20Kilburn%20(Fall%20Mountain)"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Mt. Kilburn (Fall Mountain)
+                      </a>
+                      <br />{' '}
+                      <p>
+                        Just over the river in Walpole, NH. Provides a
+                        picturesque view of downtown Bellows Falls.
+                      </p>
+                    </li>
+                    <li>
+                      <a
+                        href="http://putmta.org/trails/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Putney Mountain Trails
+                      </a>
+                      <br />
+                      <p>
+                        Some nice and relatively easy day hikes in the hills of
+                        Putney / North Westminster
+                      </p>
+                    </li>
+                  </List>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Riding Bikes</summary>
+                  <List>
+                    <li>
+                      <a
+                        href="https://www.westhillshop.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        West Hill Shop
+                      </a>
+                      <br />
+                      <p>
+                        Great resource for information, and they offer rentals!
+                      </p>
+                    </li>
+                    <li>
+                      <a
+                        href="https://greatriveroutfitters.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Bike Maps
+                      </a>
+                      <br />
+                      <p>
+                        Detailed 'Bicycle Suitability Maps' from Windham
+                        Regional Commission
+                      </p>
+                    </li>
+                  </List>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Pottery, craft & art galleries</summary>
+                  <List>
+                    <li>
+                      <p>
+                        Best to{' '}
+                        <a
+                          href="https://www.google.com/search?q=pottery+craft+art+gallery+southern+Vermont"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Google
+                        </a>{' '}
+                        those
+                      </p>
+                    </li>
+                  </List>
+                </details>
+              </li>
+            </ul>
+          </details>
         </li>
         <hr />
         <li style={{ listStyleImage: `url(${restaurants})` }}>
-          <h4>Restaurants</h4>
-          <ul style={{ listStyleType: `none` }}>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="http://popolomeanspeople.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Popolo
-              </a>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="http://wunderbarvt.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Wunderbar
-              </a>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="https://www.jdmcclimentspub.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                J.D. McCliment's
-              </a>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="http://www.47mainwalpole.com/the-restaurant.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The Restaurant at Burdick's
-              </a>
-            </li>
-          </ul>
+          <details>
+            <summary
+              style={{
+                display: `flex`,
+                width: `80%`,
+                flexDirection: `row`,
+                justifyContent: `space-around`,
+              }}
+            >
+              <h4>Restaurants</h4>
+            </summary>
+            <br />
+            <ul style={{ listStyleType: `none` }}>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://popolomeanspeople.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Popolo
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://wunderbarvt.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Wunderbar
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.jdmcclimentspub.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  J.D. McCliment's
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.graftoninnvermont.com/dining/phelps-barn/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Phelp's Barn at The Grafton Inn
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.facebook.com/Moon-Dog-Cafe-122742564429734/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Moon Dog Cafe
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://harlowfarm.com/cafe-loco/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Cafe Loco
+                </a>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://www.47mainwalpole.com/the-restaurant.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Restaurant at Burdick's
+                </a>
+              </li>
+            </ul>
+          </details>
         </li>
         <hr />
         <li style={{ listStyleImage: `url(${shopping})` }}>
-          <h4>Shopping</h4>
-          <ul style={{ listStyleType: `none` }}>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="https://www.spinnery.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Green Mountain spinnery
-              </a>
-              <p style={{ fontSize: `15px` }}>Natural Fiber Yarns</p>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="https://www.facebook.com/Swirlresale/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Swirl
-              </a>
-              <p style={{ fontSize: `15px` }}>Vintage Resale</p>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="http://harlowfarm.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Harlow Farm
-              </a>
-              <p style={{ fontSize: `15px` }}>
-                Classic Vermont Organic Farmstand
-              </p>
-            </li>
-            <li>
-              <a
-                style={{ fontFamily: `inherit` }}
-                href="https://www.putneyfood.coop/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                The Putney Co-op
-              </a>
-              <p style={{ fontSize: `15px` }}>
-                One-of-a-kind co-op food market in Putney
-              </p>
-            </li>
-          </ul>
+          <details>
+            <summary
+              style={{
+                display: `flex`,
+                flexDirection: `row`,
+                justifyContent: `space-around`,
+                width: `80%`,
+              }}
+            >
+              <h4>Shopping</h4>
+            </summary>
+            <br />
+            <ul style={{ listStyleType: `none` }}>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.spinnery.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Green Mountain spinnery
+                </a>
+                <p style={{ fontSize: `15px` }}>Natural Fiber Yarns</p>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.rugglesandhunt.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Ruggles & Hunt
+                </a>
+                <p style={{ fontSize: `15px` }}>
+                  Purveyors of Staple & Fancy Goods
+                </p>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.villagesquarebooks.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Village Square Booksellers
+                </a>
+                <p style={{ fontSize: `15px` }}>Books - Toys - Gifts</p>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.facebook.com/Swirlresale/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Swirl
+                </a>
+                <p style={{ fontSize: `15px` }}>Vintage Resale</p>
+              </li>
+
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://harlowfarm.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Harlow Farm
+                </a>
+                <p style={{ fontSize: `15px` }}>
+                  Classic Vermont Organic Farmstand
+                </p>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="https://www.putneyfood.coop/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  The Putney Co-op
+                </a>
+                <p style={{ fontSize: `15px` }}>
+                  One-of-a-kind co-op food market in Putney
+                </p>
+              </li>
+              <li>
+                <a
+                  style={{ fontFamily: `inherit` }}
+                  href="http://www.brattleboro.com/shopping-downtown/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Downtown Brattloeboro
+                </a>
+                <p style={{ fontSize: `15px` }}>Lots of choices!</p>
+              </li>
+            </ul>
+          </details>
         </li>
         <hr />
       </ul>

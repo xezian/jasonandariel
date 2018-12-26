@@ -48,6 +48,7 @@ export default class Nav extends Component {
         <Link to="/places-2-stay/">Places to Stay</Link>
         <Link to="/things-2-do/">Things to Do</Link>
         <Link to="/registry/">Gift Registry</Link>
+        <Link to="/where/">Where?</Link>
         {/* <Link to="/rsvp/">RSVP</Link> */}
       </NavStyles>
     )
