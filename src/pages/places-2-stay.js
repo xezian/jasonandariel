@@ -58,7 +58,7 @@ const PlacesToStay = () => (
               </li>
               <li>
                 <a
-                  href="https://www.saxtonsriverinn.com/"
+                  href="http://www.harvestbarninn.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -67,7 +67,7 @@ const PlacesToStay = () => (
               </li>
               <li>
                 <a
-                  href="http://www.harvestbarninn.com"
+                  href="http://www.copperkettlebnb.com/index.html"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -81,6 +81,24 @@ const PlacesToStay = () => (
                   rel="noopener noreferrer"
                 >
                   Hickory Ridge House
+                </a>
+              </li>
+              <li>
+                <a
+                  href="http://mooresinn.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Moore's Inn
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://www.bellowswalpoleinn.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Bellows Walpole Inn
                 </a>
               </li>
               <li>
