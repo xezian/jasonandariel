@@ -30,7 +30,9 @@ const PlacesToStay = () => (
       <h3>Some options</h3>
       <ul
         style={{
-          textAlign: `center`,
+          display: `flex`,
+          flexDirection: `column`,
+          alignItems: `center`,
           maxWidth: `35vw`,
           margin: `0 auto`,
           listStyleType: `none`,
@@ -133,8 +135,16 @@ const PlacesToStay = () => (
           </details>
         </li>
         <li>
-          <details>
-            <summary style={{ fontFamily: `'Major Mono Display', monospace` }}>
+          <details
+            style={{
+              width: `80vw`,
+            }}
+          >
+            <summary
+              style={{
+                fontFamily: `'Major Mono Display', monospace`,
+              }}
+            >
               Camping
             </summary>
             <br />

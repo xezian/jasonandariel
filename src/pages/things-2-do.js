@@ -10,12 +10,17 @@ import shopping from '../images/shopping.svg'
 
 const List = styled.ul`
   display: flex;
+  width: 60vw;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  hr {
+    width: 40%;
+  }
   li {
-    list-style-type: circle;
-    max-width: 70%;
+    text-align: center;
     font-size: 13px;
+    list-style-type: none;
     a {
       font-size: 15px;
       font-family: 'Josefin Slab', georgia, serif;
@@ -25,12 +30,24 @@ const List = styled.ul`
       line-height: 14px;
     }
   }
+  @media screen and (max-width: 792px) {
+    width: 90vw;
+    ul {
+      margin-left: -20px;
+    }
+    hr {
+      width: 80vw;
+    }
+    li {
+      width: 60vw;
+    }
+  }
 `
 
 const ThingsToDo = () => (
   <Layout>
     <SEO title="Things to Do" />
-    <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
+    <List>
       <h1>Things to Do</h1>
       <p>
         "We're excited as heck for y'all's wedding, but what else is there to
@@ -45,14 +62,18 @@ const ThingsToDo = () => (
         of the cool activities that you might also plan on checking out.
       </p>
       <h3>Some options</h3>
-      <ul style={{ maxWidth: `40vw`, margin: `0 auto` }}>
+      <div>
         <hr />
+      </div>
+      <List>
+        <hr />
+        <br />
         <li style={{ listStyleImage: `url(${activities})` }}>
           <details>
             <summary
               style={{
-                width: `80%`,
                 display: `flex`,
+                width: `100%`,
                 flexDirection: `row`,
                 justifyContent: `space-around`,
               }}
@@ -64,7 +85,7 @@ const ThingsToDo = () => (
               <li>
                 <details>
                   <summary>Kayaking on the Connecticut River</summary>
-                  <List>
+                  <ul>
                     <li>
                       <a
                         href="https://www.vermontcanoetouringcenter.com/"
@@ -87,13 +108,13 @@ const ThingsToDo = () => (
                       <br />
                       <p>≈ 40 minute drive North of Westminster</p>
                     </li>
-                  </List>
+                  </ul>
                 </details>
               </li>
               <li>
                 <details>
                   <summary>Hiking Trails</summary>
-                  <List>
+                  <ul>
                     <li>
                       <a
                         href="http://www.nhfamilyhikes.com/hikes.php?hike=Mt.%20Kilburn%20(Fall%20Mountain)"
@@ -122,13 +143,13 @@ const ThingsToDo = () => (
                         Putney / North Westminster
                       </p>
                     </li>
-                  </List>
+                  </ul>
                 </details>
               </li>
               <li>
                 <details>
                   <summary>Riding Bikes</summary>
-                  <List>
+                  <ul>
                     <li>
                       <a
                         href="https://www.westhillshop.com/"
@@ -156,13 +177,13 @@ const ThingsToDo = () => (
                         Regional Commission
                       </p>
                     </li>
-                  </List>
+                  </ul>
                 </details>
               </li>
               <li>
                 <details>
                   <summary>Pottery, craft & art galleries</summary>
-                  <List>
+                  <ul>
                     <li>
                       <p>
                         Best to{' '}
@@ -176,19 +197,20 @@ const ThingsToDo = () => (
                         those
                       </p>
                     </li>
-                  </List>
+                  </ul>
                 </details>
               </li>
             </ul>
           </details>
         </li>
         <hr />
+        <br />
         <li style={{ listStyleImage: `url(${restaurants})` }}>
           <details>
             <summary
               style={{
                 display: `flex`,
-                width: `80%`,
+                width: `100%`,
                 flexDirection: `row`,
                 justifyContent: `space-around`,
               }}
@@ -271,6 +293,7 @@ const ThingsToDo = () => (
           </details>
         </li>
         <hr />
+        <br />
         <li style={{ listStyleImage: `url(${shopping})` }}>
           <details>
             <summary
@@ -278,7 +301,7 @@ const ThingsToDo = () => (
                 display: `flex`,
                 flexDirection: `row`,
                 justifyContent: `space-around`,
-                width: `80%`,
+                width: `100%`,
               }}
             >
               <h4>Shopping</h4>
@@ -373,9 +396,9 @@ const ThingsToDo = () => (
           </details>
         </li>
         <hr />
-      </ul>
+      </List>
       <Link to="/">Go back to the homepage</Link>
-    </div>
+    </List>
   </Layout>
 )
 
