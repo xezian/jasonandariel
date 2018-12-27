@@ -9,7 +9,7 @@ const Header = ({ bride, groom, eventStart }) => (
     <div
       style={{
         background: `#052f46`,
-        height: `620px`,
+        height: `625px`,
       }}
     >
       <div
