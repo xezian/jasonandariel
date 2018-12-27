@@ -7,6 +7,10 @@ import AirbnbForm from '../components/AirbnbForm'
 import SEO from '../components/seo'
 
 const List = styled.ul`
+  list-style-type: none;
+  hr {
+    width: 100%;
+  }
   li {
     a {
       font-family: 'Josefin Slab', georgia, serif;
@@ -28,6 +32,7 @@ const PlacesToStay = () => (
         and abundant as those found in most cites.
       </p>
       <h3>Some options</h3>
+      <hr />
       <ul
         style={{
           display: `flex`,
@@ -38,7 +43,6 @@ const PlacesToStay = () => (
           listStyleType: `none`,
         }}
       >
-        <hr />
         <li>
           <AirbnbForm />
         </li>
@@ -159,8 +163,8 @@ const PlacesToStay = () => (
             </p>
           </details>
         </li>
-        <hr />
       </ul>
+      <hr />
       <p>
         The wedding itself will be held at{' '}
         <a
