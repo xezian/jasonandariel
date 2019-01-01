@@ -1,13 +1,22 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import Checkout from '../components/Checkout.js'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const Registry = () => (
   <Layout>
     <SEO title="Registry" />
-    <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
+    <div
+      style={{
+        display: `flex`,
+        flexDirection: `column`,
+        alignItems: `center`,
+        textAlign: `center`,
+        maxWidth: `80vw`,
+      }}
+    >
       <h1>Registry</h1>
       <p>
         "I'd sure like to getch'all somethin' nice for yer life together, but
@@ -19,7 +28,13 @@ const Registry = () => (
         that!
       </p>
       <h3>Some options</h3>
-      <ul style={{ maxWidth: `30vw`, margin: `0 auto`, listStyleType: `none` }}>
+      <ul
+        style={{
+          maxWidth: `100%`,
+          margin: `0 auto`,
+          listStyleType: `square`,
+        }}
+      >
         <hr />
         <li>
           <h4>
@@ -32,6 +47,25 @@ const Registry = () => (
               Amazon Registry
             </a>
           </h4>
+        </li>
+        <hr />
+        <li
+          style={{
+            width: `100%`,
+          }}
+        >
+          <details>
+            <summary
+              style={{
+                fontFamily: `'Major Mono Display', monospace`,
+              }}
+            >
+              Gift Fund
+            </summary>
+            <br />
+            <Checkout />
+            <br />
+          </details>
         </li>
         <hr />
       </ul>
