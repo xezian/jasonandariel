@@ -1,7 +1,7 @@
 import React from 'react'
 import ApolloClient from 'apollo-boost'
 import gql from 'graphql-tag'
-import fetch from 'node-fetch'
+import fetch from 'isomorphic-fetch'
 import { Mutation } from 'react-apollo'
 
 const client = new ApolloClient({
