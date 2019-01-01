@@ -54,13 +54,13 @@ const Registry = () => (
             width: `100%`,
           }}
         >
-          <details>
+          <details open>
             <summary
               style={{
                 fontFamily: `'Major Mono Display', monospace`,
               }}
             >
-              Gift Fund
+              Wedding Gift Fund
             </summary>
             <br />
             <Checkout />
