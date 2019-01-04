@@ -21,13 +21,13 @@ const Home = () => (
       <p>June 29, 2019</p>
       <p>At Jason's mother's home in Westminster, Vermont:</p>
       <a
-        href="https://www.google.com/maps/place/316+Thayer+Rd,+Westminster,+VT+05158/@43.121548,-72.4934147,17z"
+        href="https://www.google.com/maps/place/264+Thayer+Rd,+Westminster,+VT+05158/@43.120258,-72.4931177,17z"
         target="_blank"
         rel="noopener noreferrer"
         style={{ fontFamily: `inherit` }}
       >
         <p>
-          316 Thayer Rd.
+          264 Thayer Rd.
           <br />
           Westminster, VT
           <br />
