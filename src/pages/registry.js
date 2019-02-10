@@ -54,7 +54,7 @@ const Registry = () => (
             width: `100%`,
           }}
         >
-          <details open>
+          <details>
             <summary
               style={{
                 fontFamily: `'Major Mono Display', monospace`,
