@@ -67,7 +67,7 @@ const ThingsToDo = () => (
         <div>
           <hr />
         </div>
-        <List>
+        <List style={{ maxWidth: `600px` }}>
           <hr />
           <br />
           <li style={{ listStyleImage: `url(${activities})` }}>
