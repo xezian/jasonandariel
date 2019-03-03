@@ -47,7 +47,7 @@ const List = styled.ul`
 const ThingsToDo = () => (
   <Layout>
     <SEO title="Things to Do" />
-    <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
+    <div style={{ textAlign: `center` }}>
       <List>
         <h1>Things to Do</h1>
         <p>
