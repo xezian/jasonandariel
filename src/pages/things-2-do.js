@@ -49,7 +49,10 @@ const ThingsToDo = () => (
     <SEO title="Things to Do" />
     <List>
       <h1>Things to Do</h1>
-      <p>&apos;all&apos;s wedding, but what else is there to do?&quot;</p>
+      <p>
+        &quot;We&qpos;re excited as heck for y&qpos;all&qpos;s wedding, but what
+        else is there to do?&quot;
+      </p>
       <p>
         We know you are all coming from a spectrum of distances, and taking time
         out of your otherwise busy lives to share this day with us. We hope you
@@ -170,7 +173,7 @@ const ThingsToDo = () => (
                       </a>
                       <br />
                       <p>
-                        Detailed &apos;Bicycle Suitability Maps&apos; from
+                        Detailed &qpos;Bicycle Suitability Maps&qpos; from
                         Windham Regional Commission
                       </p>
                     </li>
@@ -243,7 +246,7 @@ const ThingsToDo = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  J.D. McCliment&apos;s
+                  J.D. McCliment&qpos;s
                 </a>
               </li>
               <li>
@@ -253,7 +256,7 @@ const ThingsToDo = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Phelp&apos;s Barn at The Grafton Inn
+                  Phelp&qpos;s Barn at The Grafton Inn
                 </a>
               </li>
               <li>
@@ -283,7 +286,7 @@ const ThingsToDo = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  The Restaurant at Burdick&apos;s
+                  The Restaurant at Burdick&qpos;s
                 </a>
               </li>
             </ul>
