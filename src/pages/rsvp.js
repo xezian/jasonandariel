@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
+import RSVP from '../components/RSVP'
 import SEO from '../components/seo'
 
-const RSVP = () => (
+const RSVPpage = () => (
   <Layout>
     <SEO title="RSVP" />
     <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
@@ -20,6 +20,7 @@ const RSVP = () => (
         option exists until our official invitations will go out around 2 months
         in advance of the date. For now, pals, just hold your little horsies.
       </p>
+      <RSVP />
       <h3>♡</h3>
       <ul style={{ maxWidth: `30vw`, margin: `0 auto`, listStyleType: `none` }}>
         <hr />
@@ -31,4 +32,4 @@ const RSVP = () => (
   </Layout>
 )
 
-export default RSVP
+export default RSVPpage

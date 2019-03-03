@@ -91,7 +91,7 @@ const Checkout = class extends React.Component {
     }
   }
 
-  resetFields() {
+  resetFields = () => {
     this.setState({
       disabled: true,
       buttonText: 'Enter Your Info',
@@ -295,3 +295,4 @@ const Checkout = class extends React.Component {
 }
 
 export default Checkout
+export { EMAIL_MUTATION, cardStyles, buttonStyles, client }
