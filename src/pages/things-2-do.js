@@ -50,7 +50,7 @@ const ThingsToDo = () => (
     <List>
       <h1>Things to Do</h1>
       <p>
-        &quot;We&qpos;re excited as heck for y&qpos;all&qpos;s wedding, but what
+        &quot;We&apos;re excited as heck for y&apos;all&apos;s wedding, but what
         else is there to do?&quot;
       </p>
       <p>
