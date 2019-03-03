@@ -8,6 +8,7 @@ module.exports = {
     author: `@xezian`,
   },
   plugins: [
+    `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

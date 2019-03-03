@@ -13,6 +13,6 @@ exports.onRouteUpdate = () => {
   }
 }
 
-exports.shouldUpdateScroll = args => {
+exports.shouldUpdateScroll = () => {
   return false
 }

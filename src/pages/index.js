@@ -19,7 +19,7 @@ const Home = () => (
       <h1>Hello, friends</h1>
       <p>We will celebrate our wedding and begin our marriage this summer,</p>
       <p>June 29, 2019</p>
-      <p>At Jason's mother's home in Westminster, Vermont:</p>
+      <p>At Jason&apos;s mother&apos;s home in Westminster, Vermont:</p>
       <a
         href="https://www.google.com/maps/place/264+Thayer+Rd,+Westminster,+VT+05158/@43.120258,-72.4931177,17z"
         target="_blank"

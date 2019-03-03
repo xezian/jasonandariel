@@ -24,7 +24,10 @@ const PlacesToStay = () => (
     <SEO title="Places to Stay" />
     <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
       <h1>Places to Stay</h1>
-      <p>"We'd love to attend y'all's wedding, but where will we stay?"</p>
+      <p>
+        &quot;We&apos;d love to attend y&apos;all&apos;s wedding, but where will
+        we stay?&quot;
+      </p>
       <p>
         If this is you, we understand. Southern Vermont is a new and unknown
         world to many, out of reach and out of the way for most, and
@@ -113,7 +116,7 @@ const PlacesToStay = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Moore's Inn
+                  Moore&apos;s Inn
                 </a>
               </li>
               <li>
@@ -173,7 +176,7 @@ const PlacesToStay = () => (
           rel="noopener noreferrer"
           style={{ fontFamily: `inherit` }}
         >
-          Jason's mother's house in Westminster, VT
+          Jason&apos;s mother&apos;s house in Westminster, VT
         </a>
         , but there are many neighboring towns and villages that would still put
         you within a very reasonable driving distance of the event.
@@ -198,7 +201,7 @@ const PlacesToStay = () => (
             >
               <br />
               <li>
-                Saxton's River, VT <br />
+                Saxton&apos;s River, VT <br />
               </li>
               <li>Westminster West, VT</li>
               <li>Bellows Falls, VT</li>

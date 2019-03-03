@@ -34,9 +34,14 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "format": "prettier --write \"src/**/*.js\"",
-    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
+    "lint": "eslint src"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.15.0",
+    "eslint-loader": "^2.1.2",
+    "gatsby-plugin-eslint": "^2.0.4",
     "prettier": "^1.15.2"
   },
   "repository": {

@@ -19,8 +19,8 @@ const Registry = () => (
     >
       <h1>Registry</h1>
       <p>
-        "I'd sure like to getch'all somethin' nice for yer life together, but
-        where to even begin?"
+        &quot;I&apos;d sure like to getch&apos;all somethin&apos; nice for yer
+        life together, but where to even begin?&quot;
       </p>
       <p>
         Well some luck is with you dare we say. We are working on putting

@@ -19,8 +19,8 @@ const Where = () => (
     >
       <h1>Where?</h1>
       <p>
-        "OK, I got it. Y'allr marryin up in Westhampster, VT. So where is that
-        exactly?"
+        &quot;OK, I got it. Y&apos;allr marryin up in Westhampster, VT. So where
+        is that exactly?&quot;
       </p>
       <p>
         ~<br />
@@ -51,20 +51,22 @@ const Where = () => (
           </summary>
           <hr />
           <p>
-            If you're travelling by Aeroplane, from a faraway distance, the
+            If you&apos;re travelling by Aeroplane, from a faraway distance, the
             easiest airport to access us by will be:
           </p>
           <li>
-            Bradley Interational Airport (Hartford, CT), Airport Code "BDL"
+            Bradley Interational Airport (Hartford, CT), Airport Code
+            &quot;BDL&quot;
           </li>
 
           <h4>Other Airports</h4>
           <li>
-            Boston Logan International Airport (Boston, MA), Airport Code "BOS"
+            Boston Logan International Airport (Boston, MA), Airport Code
+            &quot;BOS&quot;
           </li>
           <li>
             Manchester-Boston Regional Airport (Manchester, NH), Airport Code
-            "MHT"
+            &quot;MHT&quot;
           </li>
           <hr />
         </details>

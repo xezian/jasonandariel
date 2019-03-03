@@ -178,113 +178,117 @@ const Checkout = class extends React.Component {
     }
     return (
       <Mutation mutation={EMAIL_MUTATION} client={client} variables={variables}>
-        {(sendEmails, { error, loading }) => (
-          <div style={cardStyles}>
-            <h4 style={{ alignSelf: `center` }}>Our Wedding Gift Fund</h4>
-            <p>
-              is an easy way to support our shared adventures and our life
-              together without having to choose a specific item to buy for us.
-            </p>
-            <div
-              style={{
-                width: `100%`,
-                display: `flex`,
-                flexDirection: `column`,
-                alignItems: `center`,
-              }}
-            >
-              <label htmlFor="amount">
-                Amount: $
-                <input
-                  name="amount"
-                  type="number"
-                  max="2500"
-                  value={this.state.amount}
-                  onChange={this.changeSomething}
-                  style={{
-                    width: `45px`,
-                    height: `20px`,
-                    lineHeight: `0px`,
-                    backgroundColor: `#d1e6ef`,
-                    borderRadius: `7px`,
-                    marginBottom: `10px`,
-                    textAlign: `center`,
-                  }}
-                />
-              </label>
-              <label htmlFor="email">
-                Your Email:{' '}
-                <input
-                  name="email"
-                  type="email"
-                  max="2500"
-                  value={this.state.email}
-                  onChange={this.changeSomething}
-                  style={{
-                    width: `auto`,
-                    height: `20px`,
-                    lineHeight: `0px`,
-                    backgroundColor: `#d1e6ef`,
-                    borderRadius: `7px`,
-                    marginBottom: `10px`,
-                    textAlign: `center`,
-                  }}
-                />
-              </label>
-              <label htmlFor="name">
-                Your Name:{' '}
-                <input
-                  name="name"
-                  type="text"
-                  max="2500"
-                  value={this.state.name}
-                  onChange={this.changeSomething}
-                  style={{
-                    width: `auto`,
-                    height: `20px`,
-                    lineHeight: `0px`,
-                    backgroundColor: `#d1e6ef`,
-                    borderRadius: `7px`,
-                    marginBottom: `10px`,
-                    textAlign: `center`,
-                  }}
-                />
-              </label>
-              <details>
-                <summary>Optional Note</summary>
-                <br />
-                <label htmlFor="note">
-                  Note:{' '}
-                  <textarea
-                    content-editable="true"
-                    name="note"
-                    value={this.state.note}
+        {(sendEmails, { error, loading }) => {
+          if (error) return <div>{error}</div>
+          if (loading) return <div>Loading...</div>
+          return (
+            <div style={cardStyles}>
+              <h4 style={{ alignSelf: `center` }}>Our Wedding Gift Fund</h4>
+              <p>
+                is an easy way to support our shared adventures and our life
+                together without having to choose a specific item to buy for us.
+              </p>
+              <div
+                style={{
+                  width: `100%`,
+                  display: `flex`,
+                  flexDirection: `column`,
+                  alignItems: `center`,
+                }}
+              >
+                <label htmlFor="amount">
+                  Amount: $
+                  <input
+                    name="amount"
+                    type="number"
+                    max="2500"
+                    value={this.state.amount}
                     onChange={this.changeSomething}
                     style={{
-                      width: `100%`,
-                      verticalAlign: `top`,
-                      height: `80px`,
+                      width: `45px`,
+                      height: `20px`,
+                      lineHeight: `0px`,
                       backgroundColor: `#d1e6ef`,
                       borderRadius: `7px`,
-                      margin: `auto`,
                       marginBottom: `10px`,
+                      textAlign: `center`,
                     }}
                   />
                 </label>
-              </details>
-              <br />
-              <button
-                style={buttonStyles}
-                onClick={event => this.openStripeCheckout(event, sendEmails)}
-                disabled={this.state.disabled}
-              >
-                {this.state.buttonText}
-              </button>
-              <br />
-              {this.state.paymentMessage}
+                <label htmlFor="email">
+                  Your Email:{' '}
+                  <input
+                    name="email"
+                    type="email"
+                    max="2500"
+                    value={this.state.email}
+                    onChange={this.changeSomething}
+                    style={{
+                      width: `auto`,
+                      height: `20px`,
+                      lineHeight: `0px`,
+                      backgroundColor: `#d1e6ef`,
+                      borderRadius: `7px`,
+                      marginBottom: `10px`,
+                      textAlign: `center`,
+                    }}
+                  />
+                </label>
+                <label htmlFor="name">
+                  Your Name:{' '}
+                  <input
+                    name="name"
+                    type="text"
+                    max="2500"
+                    value={this.state.name}
+                    onChange={this.changeSomething}
+                    style={{
+                      width: `auto`,
+                      height: `20px`,
+                      lineHeight: `0px`,
+                      backgroundColor: `#d1e6ef`,
+                      borderRadius: `7px`,
+                      marginBottom: `10px`,
+                      textAlign: `center`,
+                    }}
+                  />
+                </label>
+                <details>
+                  <summary>Optional Note</summary>
+                  <br />
+                  <label htmlFor="note">
+                    Note:{' '}
+                    <textarea
+                      content-editable="true"
+                      name="note"
+                      value={this.state.note}
+                      onChange={this.changeSomething}
+                      style={{
+                        width: `100%`,
+                        verticalAlign: `top`,
+                        height: `80px`,
+                        backgroundColor: `#d1e6ef`,
+                        borderRadius: `7px`,
+                        margin: `auto`,
+                        marginBottom: `10px`,
+                      }}
+                    />
+                  </label>
+                </details>
+                <br />
+                <button
+                  style={buttonStyles}
+                  onClick={event => this.openStripeCheckout(event, sendEmails)}
+                  disabled={this.state.disabled}
+                >
+                  {this.state.buttonText}
+                </button>
+                <br />
+                {this.state.paymentMessage}
+              </div>
             </div>
-          </div>
-        )}
+          )
+        }}
       </Mutation>
     )
   }
