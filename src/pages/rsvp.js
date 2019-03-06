@@ -21,7 +21,6 @@ const RSVPpage = () => (
         in advance of the date. For now, pals, just hold your little horsies.
       </p>
       <RSVP />
-      <h3>♡</h3>
       <ul style={{ maxWidth: `30vw`, margin: `0 auto`, listStyleType: `none` }}>
         <hr />
         <li>♡</li>

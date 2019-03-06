@@ -12,17 +12,42 @@ const ViewBox = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.3rem;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 3rem;
-  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.2);
-  background-color: #6d003172;
+  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
+  background-color: #efedec72;
   border-radius: 6px;
   max-width: 400px;
   margin-bottom: 20px;
+  hr {
+    display: block;
+    height: 1px;
+    width: 100%;
+    border: 0;
+    border-top: 1px solid #b03045af;
+    margin: 1em 0;
+    padding: 0; 
+  }
+  input, textarea {
+    font-family: 'Josefin Slab', georgia, serif;
+    border: 1px solid #b03045af;
+    &:focus {
+      outline: 0;
+      background-color: #efefef !important;
+    }
+  }
+  details textarea {
+    resize: vertical;
+  }
   .hints {
     margin: 5px 0%;
     color: #b03045;
+  }
+  .heart {
+    color: #b03045af;
   }
   button {
     font-size: 13px;
@@ -48,7 +73,7 @@ export default class RSVP extends Component {
   state = {
     disabled: true,
     buttonText: 'RSVP',
-    rsvpMessage: '<3',
+    rsvpMessage: '♡',
     amount: '',
     vegetarian: '',
     subjectThanks: '',
@@ -83,7 +108,7 @@ export default class RSVP extends Component {
     this.setState({
       disabled: true,
       buttonText: 'Enter Your Info',
-      rsvpMessage: '<3',
+      rsvpMessage: '♡',
       amount: '',
       vegetarian: '',
       email: '',
@@ -139,8 +164,10 @@ export default class RSVP extends Component {
           return (
             <ViewBox>
               <Card>
-                <h4 style={{ alignSelf: `center` }}>RSVP</h4>
-                <p>Répondez s&apos;il vous plaît...</p>
+                <h3 style={{ alignSelf: `center` }}>RSVP</h3>
+                <p>Répondez s&apos;il vous plaît</p>
+                <hr/>
+                <br/>
                 <label htmlFor="name">
                   M{' '}
                   <input
@@ -151,7 +178,7 @@ export default class RSVP extends Component {
                     onChange={this.changeSomething}
                     style={{
                       width: `auto`,
-                      height: `20px`,
+                      height: `30px`,
                       lineHeight: `0px`,
                       backgroundColor: `#d1e6ef`,
                       borderRadius: `7px`,
@@ -177,7 +204,7 @@ export default class RSVP extends Component {
                     onChange={this.changeSomething}
                     style={{
                       width: `45px`,
-                      height: `20px`,
+                      height: `30px`,
                       lineHeight: `0px`,
                       backgroundColor: `#d1e6ef`,
                       borderRadius: `7px`,
@@ -208,7 +235,7 @@ export default class RSVP extends Component {
                     onChange={this.changeSomething}
                     style={{
                       width: `45px`,
-                      height: `20px`,
+                      height: `30px`,
                       lineHeight: `0px`,
                       backgroundColor: `#d1e6ef`,
                       borderRadius: `7px`,
@@ -254,7 +281,7 @@ export default class RSVP extends Component {
                   {this.state.buttonText}
                 </button>
                 <br />
-                {this.state.rsvpMessage}
+                <span className="heart">{this.state.rsvpMessage}</span>
               </Card>
             </ViewBox>
           )
