@@ -29,9 +29,10 @@ const Card = styled.div`
     border: 0;
     border-top: 1px solid #b03045af;
     margin: 1em 0;
-    padding: 0; 
+    padding: 0;
   }
-  input, textarea {
+  input,
+  textarea {
     font-family: 'Josefin Slab', georgia, serif;
     border: 1px solid #b03045af;
     &:focus {
@@ -166,8 +167,8 @@ export default class RSVP extends Component {
               <Card>
                 <h3 style={{ alignSelf: `center` }}>RSVP</h3>
                 <p>Répondez s&apos;il vous plaît</p>
-                <hr/>
-                <br/>
+                <hr />
+                <br />
                 <label htmlFor="name">
                   M{' '}
                   <input

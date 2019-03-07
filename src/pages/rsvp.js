@@ -9,16 +9,10 @@ const RSVPpage = () => (
     <SEO title="RSVP" />
     <div style={{ textAlign: `center`, maxWidth: `80vw` }}>
       <h1>RSVP</h1>
+      <p>Répondez s&apos;il vous plaît</p>
       <p>
-        &quot;I made a decision about y&apos;all&apos;s wedding, but where can I
-        RSVP at though?&quot;
-      </p>
-      <p>
-        This will be the RSVP portal through which we will allow our invited
-        guests to RSVP electronically. Don&apos;t worry, we will also still
-        accept your RSVP via the traditional US mail delivery method. Neither
-        option exists until our official invitations will go out around 2 months
-        in advance of the date. For now, pals, just hold your little horsies.
+        The kindness of your response is most respectfully requested by the
+        first of June, 2019
       </p>
       <RSVP />
       <ul style={{ maxWidth: `30vw`, margin: `0 auto`, listStyleType: `none` }}>
