@@ -43,6 +43,14 @@ const Card = styled.div`
   details textarea {
     resize: vertical;
   }
+  .radio-toolbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .taco {
+    margin-bottom: 10px;
+  }
   .hints {
     margin: 5px 0%;
     color: #b03045;
@@ -77,6 +85,7 @@ export default class RSVP extends Component {
     rsvpMessage: '♡',
     amount: '',
     vegetarian: '',
+    meat: '',
     subjectThanks: '',
     bodyThanks: '',
     subjectNotif: '',
@@ -92,10 +101,10 @@ export default class RSVP extends Component {
   }
 
   enableButton = () => {
-    const { vegetarian, name, amount } = this.state
+    const { vegetarian, name, amount, meat } = this.state
     if (
       name.length > 4 &&
-      vegetarian <= amount &&
+      vegetarian + meat <= amount &&
       amount <= 10 &&
       amount >= 1
     ) {
@@ -112,6 +121,7 @@ export default class RSVP extends Component {
       rsvpMessage: '♡',
       amount: '',
       vegetarian: '',
+      meat: '',
       email: '',
       subjectThanks: '',
       bodyThanks: '',
@@ -168,6 +178,27 @@ export default class RSVP extends Component {
                 <h3 style={{ alignSelf: `center` }}>RSVP</h3>
                 <p>Répondez s&apos;il vous plaît</p>
                 <hr />
+                <div className="radio-toolbar">
+                  <label htmlFor="radio1">
+                    <input
+                      type="radio"
+                      id="radio1"
+                      name="radios"
+                      value="all"
+                      checked
+                    />{' '}
+                    Accepts with Pleasure
+                  </label>
+                  <label htmlFor="radio2">
+                    <input
+                      type="radio"
+                      id="radio2"
+                      name="radios"
+                      value="false"
+                    />{' '}
+                    Declines with Regret
+                  </label>
+                </div>
                 <br />
                 <label htmlFor="name">
                   M{' '}
@@ -226,8 +257,10 @@ export default class RSVP extends Component {
                     </>
                   </div>
                 )}
+                <hr />
+                <span className="taco">🌮 Taco preference 🌮</span>
                 <label htmlFor="vegetarian">
-                  Number Vegetarian:
+                  Vegetarian:
                   <input
                     name="vegetarian"
                     type="number"
@@ -245,16 +278,37 @@ export default class RSVP extends Component {
                     }}
                   />
                 </label>
+                <label htmlFor="meat">
+                  Chicken / Carnitas:
+                  <input
+                    name="meat"
+                    type="number"
+                    max="10"
+                    value={this.state.meat}
+                    onChange={this.changeSomething}
+                    style={{
+                      width: `45px`,
+                      height: `30px`,
+                      lineHeight: `0px`,
+                      backgroundColor: `#d1e6ef`,
+                      borderRadius: `7px`,
+                      marginBottom: `10px`,
+                      textAlign: `center`,
+                    }}
+                  />
+                </label>
                 {this.state.hints && (
                   <div className="hints">
-                    {this.state.vegetarian > this.state.amount && (
+                    {this.state.meat + this.state.vegetarian >
+                      this.state.amount && (
                       <>
-                        Please enter no more Vegetarians than there are Guests!
-                        ;)
+                        Please enter no more diet preferences than there are
+                        Guests! ;)
                       </>
                     )}
                   </div>
                 )}
+                <hr />
                 <details>
                   <summary>Optional Note</summary>
                   <br />
