@@ -32,7 +32,8 @@ const Card = styled.div`
     padding: 0;
   }
   input,
-  textarea {
+  textarea,
+  div.name {
     font-family: 'Josefin Slab', georgia, serif;
     border: 1px solid #b03045af;
     &:focus {
@@ -42,6 +43,22 @@ const Card = styled.div`
   }
   details textarea {
     resize: vertical;
+  }
+  div.name {
+    min-width: 200px;
+    position: relative;
+    word-break: break-all;
+    width: auto;
+    min-height: 30px;
+    background-color: #d1e6ef;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .namelabel {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
   .radio-toolbar {
     display: flex;
@@ -79,23 +96,47 @@ const Card = styled.div`
 `
 
 export default class RSVP extends Component {
-  state = {
-    disabled: true,
-    buttonText: 'RSVP',
-    rsvpMessage: '♡',
-    amount: '',
-    vegetarian: '',
-    meat: '',
-    subjectThanks: '',
-    bodyThanks: '',
-    subjectNotif: '',
-    bodyNotif: '',
-    note: '',
-    name: '',
-    hints: false,
+  constructor(props) {
+    super(props)
+    this.state = {
+      disabled: true,
+      buttonText: 'RSVP',
+      rsvpMessage: '♡',
+      amount: '',
+      vegetarian: '',
+      meat: '',
+      subjectThanks: '',
+      bodyThanks: '',
+      subjectNotif: '',
+      bodyNotif: '',
+      note: '',
+      name: '',
+      rsvp: 'accept',
+      hints: false,
+    }
   }
+
+  resetFields = () => {
+    this.setState({
+      disabled: true,
+      buttonText: 'Enter Your Info',
+      rsvpMessage: '♡',
+      amount: '',
+      vegetarian: '',
+      meat: '',
+      email: '',
+      subjectThanks: '',
+      bodyThanks: '',
+      subjectNotif: '',
+      bodyNotif: '',
+      note: '',
+      rsvp: 'accept',
+      hints: false,
+      name: '',
+    })
+  }
+
   changeSomething = event => {
-    event.preventDefault()
     const { name, value } = event.target
     this.setState({ [name]: value }, this.enableButton)
   }
@@ -114,25 +155,6 @@ export default class RSVP extends Component {
     }
   }
 
-  resetFields = () => {
-    this.setState({
-      disabled: true,
-      buttonText: 'Enter Your Info',
-      rsvpMessage: '♡',
-      amount: '',
-      vegetarian: '',
-      meat: '',
-      email: '',
-      subjectThanks: '',
-      bodyThanks: '',
-      subjectNotif: '',
-      bodyNotif: '',
-      note: '',
-      hints: false,
-      name: '',
-    })
-  }
-
   processClick = (e, sendEmails) => {
     if (this.state.disabled) {
       this.showHints(e)
@@ -141,15 +163,69 @@ export default class RSVP extends Component {
     }
   }
 
-  processSubmit(e, sendEmails) {
-    console.log(e)
-    console.log(sendEmails)
-    console.log(`hi! I'm a function that isn't built yet :)`)
+  changeName = async e => {
+    await this.setState({ name: e.target.innerHTML.toString() })
+  }
+
+  processSubmit = async (e, sendEmails) => {
+    if (this.state.radios === 'decline') {
+      await this.setState(
+        {
+          rsvpMessage: 'Success! Thank you <3',
+          disabled: true,
+          subjectThanks: 'Thanks for for your RSVP!',
+          bodyThanks: `Thank you! <br/>We appreiciate your timely response.<br/>
+          We are sorry to hear you won't be joining us, but the next time you see us...<br/>
+          We'll be married. So I mean, we are stoked. And we look forward to it!<br/>
+          <br/>Really no worries :)</br>
+          Name(s): ${this.state.name}<br/>
+          Number in Party: ${this.state.amount}<br/>
+          <3 Jason & Ariel`,
+          subjectNotif: `RSVP Receieved - ${this.state.name}`,
+          bodyNotif: `<h2>New RSVP Action Alert!</h2><br/>
+          <h3>Waaaaaaaaahhh!!!!!</h3>
+          <p>Someone declined :( Hopefully they had a good reason</p>
+          Who? ${this.state.name}<br/>
+          ${this.state.note.length > 1 && 'Note: ' + this.state.note + '<br/>'}
+          On the bright side <3 they saved us money! <3 <3 <3`,
+        },
+        sendEmails
+      )
+    } else {
+      await this.setState(
+        {
+          rsvpMessage: 'Success! Thank you <3',
+          disabled: true,
+          subjectThanks: 'Thanks for for your RSVP!',
+          bodyThanks: `Thank you! <br/>We appreiciate your timely response!<br/>
+          We will personally be in touch soon via the email address provided to confirm.
+          <br/> Your details:</br>
+          Name(s): ${this.state.name}<br/>
+          Number in Party: ${this.state.amount}<br/>
+          ${this.state.vegetarian > 0 &&
+            'Number Vegetarian: ' + this.state.vegetarian + '<br/>'}
+          ${this.state.meat > 0 &&
+            'Number Carnivorous: ' + this.state.meat + '<br/>'}
+          <3 Jason & Ariel`,
+          subjectNotif: `RSVP Receieved - ${this.state.name}`,
+          bodyNotif: `<h2>New RSVP Action Alert!</h2><br/>
+          <h3>Yaaaayyyyyyyyyy!!!!!</h3>
+          <p>Someone accepted :)</p>
+          Who? ${this.state.name}<br/>
+          How Many? ${this.state.amount}<br/>
+          Vegetarians? ${this.state.vegetarian}<br/>
+          Meat Eaters? ${this.state.meat}<br/>
+          ${this.state.note.length > 1 && 'Note: ' + this.state.note + '<br/>'}
+          Love <3 is in the air <3 <3 <3`,
+        },
+        sendEmails
+      )
+    }
+    this.resetFields()
   }
 
   showHints = () => {
     this.setState({ hints: true })
-    console.log(this.state)
   }
 
   render() {
@@ -183,9 +259,10 @@ export default class RSVP extends Component {
                     <input
                       type="radio"
                       id="radio1"
-                      name="radios"
-                      value="all"
-                      checked
+                      name="rsvp"
+                      value="accept"
+                      onChange={this.changeSomething}
+                      checked={this.state.rsvp === 'accept'}
                     />{' '}
                     Accepts with Pleasure
                   </label>
@@ -193,30 +270,26 @@ export default class RSVP extends Component {
                     <input
                       type="radio"
                       id="radio2"
-                      name="radios"
-                      value="false"
+                      name="rsvp"
+                      value="decline"
+                      onChange={this.changeSomething}
+                      checked={this.state.rsvp === 'decline'}
                     />{' '}
                     Declines with Regret
                   </label>
                 </div>
                 <br />
-                <label htmlFor="name">
+                <label className="namelabel" htmlFor="name">
                   M{' '}
-                  <input
+                  <div
+                    contentEditable
+                    className="name"
+                    id="name"
                     name="name"
-                    type="name"
+                    type="text"
                     maxLength="500"
-                    value={this.state.name}
-                    onChange={this.changeSomething}
-                    style={{
-                      width: `auto`,
-                      height: `30px`,
-                      lineHeight: `0px`,
-                      backgroundColor: `#d1e6ef`,
-                      borderRadius: `7px`,
-                      marginBottom: `10px`,
-                      textAlign: `center`,
-                    }}
+                    autoComplete="off"
+                    onBlur={this.changeName}
                   />
                 </label>
                 {this.state.hints && (
@@ -315,7 +388,6 @@ export default class RSVP extends Component {
                   <label htmlFor="note">
                     Note:{' '}
                     <textarea
-                      content-editable="true"
                       name="note"
                       value={this.state.note}
                       onChange={this.changeSomething}
