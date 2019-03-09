@@ -159,6 +159,7 @@ export default class RSVP extends Component {
   processSubmit = async (e, sendEmails) => {
     let bodyThanks = ''
     let bodyNotif = ''
+    this.setState({ disabled: true })
     if (this.state.radios === 'decline') {
       bodyThanks = `Thank you!<br/><br/>We appreiciate your timely response.<br/><br/>
       We are sorry to hear you won't be joining us, but the next time you see us...<br/>
@@ -220,14 +221,14 @@ export default class RSVP extends Component {
 
   render() {
     const {
-      email,
+      xmail,
       subjectThanks,
       bodyThanks,
       subjectNotif,
       bodyNotif,
     } = this.state
     const variables = {
-      xmail: email,
+      email: xmail,
       subjectThanks,
       bodyThanks,
       subjectNotif,
