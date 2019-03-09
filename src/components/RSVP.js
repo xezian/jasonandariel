@@ -179,7 +179,7 @@ export default class RSVP extends Component {
     } else {
       bodyThanks = `Thank you!<br/><br/>We appreiciate your timely response!<br/><br/>
       We will personally be in touch soon via the email you address provided to confirm. (${
-        this.state.email
+        this.state.xmail
       })
       <br/><br/>Your details:</br>
       Name(s): ${this.state.name}<br/>
