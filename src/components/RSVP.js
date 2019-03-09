@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
 import { EMAIL_MUTATION, client } from './Checkout'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 const ViewBox = styled.div`
   width: 100%;
@@ -123,26 +124,6 @@ export default class RSVP extends Component {
     }
   }
 
-  resetFields = () => {
-    this.setState({
-      disabled: true,
-      buttonText: 'Enter Your Info',
-      rsvpMessage: '♡',
-      amount: '',
-      vegetarian: '',
-      meat: '',
-      subjectThanks: '',
-      bodyThanks: '',
-      subjectNotif: '',
-      bodyNotif: '',
-      note: '',
-      email: '',
-      rsvp: 'accept',
-      hints: false,
-      name: '',
-    })
-  }
-
   changeSomething = event => {
     const { name, value } = event.target
     this.setState({ [name]: value }, this.enableButton)
@@ -239,7 +220,7 @@ export default class RSVP extends Component {
         sendEmails
       )
     }
-    this.resetFields()
+    navigate('/thainq/')
   }
 
   showHints = () => {

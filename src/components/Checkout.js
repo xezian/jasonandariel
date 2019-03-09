@@ -134,7 +134,6 @@ const Checkout = class extends React.Component {
           }
         )
           .then(async res => {
-            console.log('Transaction processed successfully')
             await this.setState(
               {
                 paymentMessage: 'Success! Thank you <3',
