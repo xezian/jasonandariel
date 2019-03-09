@@ -182,19 +182,23 @@ export default class RSVP extends Component {
           rsvpMessage: 'Success! Thank you <3',
           disabled: true,
           subjectThanks: 'Thanks for for your RSVP!',
-          bodyThanks: `Thank you! <br/>We appreiciate your timely response.<br/>
+          bodyThanks: `Thank you!<br/><br/>We appreiciate your timely response.<br/><br/>
           We are sorry to hear you won't be joining us, but the next time you see us...<br/>
           We'll be married. So I mean, we are stoked. And we look forward to it!<br/>
-          <br/>Really no worries :)</br>
+          <br/>Really no worries :)</br><br/>
           Name(s): ${this.state.name}<br/>
-          Number in Party: ${this.state.amount}<br/>
+          Number in Party: ${this.state.amount}<br/><br/>
           <3 Jason & Ariel`,
           subjectNotif: `RSVP Receieved - ${this.state.name}`,
           bodyNotif: `<h2>New RSVP Action Alert!</h2><br/>
           <h3>Waaaaaaaaahhh!!!!!</h3>
           <p>Someone declined :( Hopefully they had a good reason</p>
           Who? ${this.state.name}<br/>
-          ${this.state.note.length > 1 && 'Note: ' + this.state.note + '<br/>'}
+          ${
+            this.state.note.length > 1
+              ? 'Note: ' + this.state.note + '<br/>'
+              : null
+          }
           On the bright side <3 they saved us money! <3 <3 <3`,
         },
         sendEmails
@@ -205,16 +209,18 @@ export default class RSVP extends Component {
           rsvpMessage: 'Success! Thank you <3',
           disabled: true,
           subjectThanks: 'Thanks for for your RSVP!',
-          bodyThanks: `Thank you! <br/>We appreiciate your timely response!<br/>
-          We will personally be in touch soon via the email address provided to confirm.
-          <br/> Your details:</br>
+          bodyThanks: `Thank you!<br/><br/>We appreiciate your timely response!<br/><br/>
+          We will personally be in touch soon via the email you address provided to confirm. (${
+            this.state.email
+          })
+          <br/><br/>Your details:</br>
           Name(s): ${this.state.name}<br/>
           Number in Party: ${this.state.amount}<br/>
           ${this.state.vegetarian > 0 &&
             'Number Vegetarian: ' + this.state.vegetarian + '<br/>'}
           ${this.state.meat > 0 &&
             'Number Carnivorous: ' + this.state.meat + '<br/>'}
-          <3 Jason & Ariel`,
+          <br/><3 Jason & Ariel`,
           subjectNotif: `RSVP Receieved - ${this.state.name}`,
           bodyNotif: `<h2>New RSVP Action Alert!</h2><br/>
           <h3>Yaaaayyyyyyyyyy!!!!!</h3>
@@ -223,7 +229,11 @@ export default class RSVP extends Component {
           How Many? ${this.state.amount}<br/>
           Vegetarians? ${this.state.vegetarian}<br/>
           Meat Eaters? ${this.state.meat}<br/>
-          ${this.state.note.length > 1 && 'Note: ' + this.state.note + '<br/>'}
+          ${
+            this.state.note.length > 1
+              ? 'Note: ' + this.state.note + '<br/>'
+              : null
+          }
           Love <3 is in the air <3 <3 <3`,
         },
         sendEmails
