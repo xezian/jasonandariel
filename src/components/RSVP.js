@@ -117,7 +117,7 @@ export default class RSVP extends Component {
       subjectNotif: '',
       bodyNotif: '',
       note: '',
-      email: '',
+      xmail: '',
       rsvp: 'accept',
       hints: false,
       name: '',
@@ -130,13 +130,13 @@ export default class RSVP extends Component {
   }
 
   enableButton = () => {
-    const { vegetarian, name, amount, meat, email } = this.state
+    const { vegetarian, name, amount, meat, xmail } = this.state
     if (
       name.length > 4 &&
       vegetarian + meat <= amount &&
       amount <= 10 &&
       amount >= 1 &&
-      email.length > 5
+      xmail.length > 5
     ) {
       this.setState({ disabled: false, buttonText: 'Répondez' })
     } else {
@@ -236,7 +236,7 @@ export default class RSVP extends Component {
       bodyNotif,
     } = this.state
     const variables = {
-      email,
+      xmail: email,
       subjectThanks,
       bodyThanks,
       subjectNotif,
@@ -298,15 +298,15 @@ export default class RSVP extends Component {
                     )}
                   </div>
                 )}
-                <label htmlFor="email">
+                <label htmlFor="xmail">
                   Email:
                   <input
-                    name="email"
+                    name="xmail"
                     type="email"
                     max="10"
-                    value={this.state.email}
+                    value={this.state.xmail}
                     onChange={this.changeSomething}
-                    autoComplete="off"
+                    autoComplete="something-new"
                     style={{
                       width: `170px`,
                       height: `30px`,
@@ -321,7 +321,7 @@ export default class RSVP extends Component {
                 {this.state.hints && (
                   <div className="hints">
                     <>
-                      {this.state.email.length <= 5 && (
+                      {this.state.xmail.length <= 5 && (
                         <>Please enter a valid email address</>
                       )}
                     </>
