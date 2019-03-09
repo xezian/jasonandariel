@@ -20,8 +20,11 @@ const Card = styled.div`
   box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
   background-color: #efedec72;
   border-radius: 6px;
-  min-width: 600px;
+  width: 600px;
   margin-bottom: 20px;
+  @media screen and (max-width: 725px) {
+    width: 100vw;
+  }
   hr {
     display: block;
     height: 1px;
