@@ -20,7 +20,7 @@ const Card = styled.div`
   box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
   background-color: #efedec72;
   border-radius: 6px;
-  max-width: 400px;
+  min-width: 600px;
   margin-bottom: 20px;
   hr {
     display: block;
@@ -60,10 +60,13 @@ const Card = styled.div`
     flex-direction: row;
     align-items: flex-start;
   }
-  .radio-toolbar {
+  .radio-toolbar,
+  .tacos {
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
   }
   .taco {
     margin-bottom: 10px;
@@ -110,9 +113,10 @@ export default class RSVP extends Component {
       subjectNotif: '',
       bodyNotif: '',
       note: '',
-      name: '',
+      email: '',
       rsvp: 'accept',
       hints: false,
+      name: '',
     }
   }
 
@@ -124,12 +128,12 @@ export default class RSVP extends Component {
       amount: '',
       vegetarian: '',
       meat: '',
-      email: '',
       subjectThanks: '',
       bodyThanks: '',
       subjectNotif: '',
       bodyNotif: '',
       note: '',
+      email: '',
       rsvp: 'accept',
       hints: false,
       name: '',
@@ -142,12 +146,13 @@ export default class RSVP extends Component {
   }
 
   enableButton = () => {
-    const { vegetarian, name, amount, meat } = this.state
+    const { vegetarian, name, amount, meat, email } = this.state
     if (
       name.length > 4 &&
       vegetarian + meat <= amount &&
       amount <= 10 &&
-      amount >= 1
+      amount >= 1 &&
+      email.length > 5
     ) {
       this.setState({ disabled: false, buttonText: 'Répondez' })
     } else {
@@ -299,6 +304,35 @@ export default class RSVP extends Component {
                     )}
                   </div>
                 )}
+                <label htmlFor="email">
+                  Email:
+                  <input
+                    name="email"
+                    type="email"
+                    max="10"
+                    value={this.state.email}
+                    onChange={this.changeSomething}
+                    autoComplete="off"
+                    style={{
+                      width: `170px`,
+                      height: `30px`,
+                      lineHeight: `0px`,
+                      backgroundColor: `#d1e6ef`,
+                      borderRadius: `7px`,
+                      marginBottom: `10px`,
+                      textAlign: `center`,
+                    }}
+                  />
+                </label>
+                {this.state.hints && (
+                  <div className="hints">
+                    <>
+                      {this.state.email.length <= 5 && (
+                        <>Please enter a valid email address</>
+                      )}
+                    </>
+                  </div>
+                )}
                 <label htmlFor="amount">
                   Number of Guests:
                   <input
@@ -332,44 +366,46 @@ export default class RSVP extends Component {
                 )}
                 <hr />
                 <span className="taco">🌮 Taco preference 🌮</span>
-                <label htmlFor="vegetarian">
-                  Vegetarian:
-                  <input
-                    name="vegetarian"
-                    type="number"
-                    max="10"
-                    value={this.state.vegetarian}
-                    onChange={this.changeSomething}
-                    style={{
-                      width: `45px`,
-                      height: `30px`,
-                      lineHeight: `0px`,
-                      backgroundColor: `#d1e6ef`,
-                      borderRadius: `7px`,
-                      marginBottom: `10px`,
-                      textAlign: `center`,
-                    }}
-                  />
-                </label>
-                <label htmlFor="meat">
-                  Chicken / Carnitas:
-                  <input
-                    name="meat"
-                    type="number"
-                    max="10"
-                    value={this.state.meat}
-                    onChange={this.changeSomething}
-                    style={{
-                      width: `45px`,
-                      height: `30px`,
-                      lineHeight: `0px`,
-                      backgroundColor: `#d1e6ef`,
-                      borderRadius: `7px`,
-                      marginBottom: `10px`,
-                      textAlign: `center`,
-                    }}
-                  />
-                </label>
+                <div className="tacos">
+                  <label htmlFor="vegetarian">
+                    Vegetarian:
+                    <input
+                      name="vegetarian"
+                      type="number"
+                      max="10"
+                      value={this.state.vegetarian}
+                      onChange={this.changeSomething}
+                      style={{
+                        width: `45px`,
+                        height: `30px`,
+                        lineHeight: `0px`,
+                        backgroundColor: `#d1e6ef`,
+                        borderRadius: `7px`,
+                        marginBottom: `10px`,
+                        textAlign: `center`,
+                      }}
+                    />
+                  </label>
+                  <label htmlFor="meat">
+                    Chicken / Carnitas:
+                    <input
+                      name="meat"
+                      type="number"
+                      max="10"
+                      value={this.state.meat}
+                      onChange={this.changeSomething}
+                      style={{
+                        width: `45px`,
+                        height: `30px`,
+                        lineHeight: `0px`,
+                        backgroundColor: `#d1e6ef`,
+                        borderRadius: `7px`,
+                        marginBottom: `10px`,
+                        textAlign: `center`,
+                      }}
+                    />
+                  </label>
+                </div>
                 {this.state.hints && (
                   <div className="hints">
                     {this.state.meat + this.state.vegetarian >
