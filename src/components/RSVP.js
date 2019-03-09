@@ -3,103 +3,13 @@ import { Mutation } from 'react-apollo'
 import { EMAIL_MUTATION, client } from './Checkout'
 import styled from 'styled-components'
 import { navigate } from 'gatsby'
+import Card from './rsvpStyles'
 
 const ViewBox = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-`
-const Card = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.3rem;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 3rem;
-  box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
-  background-color: #efedec72;
-  border-radius: 6px;
-  width: 600px;
-  margin-bottom: 20px;
-  @media screen and (max-width: 725px) {
-    width: 100vw;
-  }
-  hr {
-    display: block;
-    height: 1px;
-    width: 100%;
-    border: 0;
-    border-top: 1px solid #b03045af;
-    margin: 1em 0;
-    padding: 0;
-  }
-  input,
-  textarea,
-  div.name {
-    font-family: 'Josefin Slab', georgia, serif;
-    border: 1px solid #b03045af;
-    &:focus {
-      outline: 0;
-      background-color: #efefef !important;
-    }
-  }
-  details textarea {
-    resize: vertical;
-  }
-  div.name {
-    min-width: 200px;
-    position: relative;
-    word-break: break-all;
-    width: auto;
-    min-height: 30px;
-    background-color: #d1e6ef;
-    border-radius: 7px;
-    margin-bottom: 10px;
-    text-align: center;
-  }
-  .namelabel {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-  .radio-toolbar,
-  .tacos {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .taco {
-    margin-bottom: 10px;
-  }
-  .hints {
-    margin: 5px 0%;
-    color: #b03045;
-  }
-  .heart {
-    color: #b03045af;
-  }
-  button {
-    font-size: 13px;
-    text-align: center;
-    color: #fff;
-    outline: none;
-    padding: 12px 60px;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
-    background-color: #b03045af;
-    border-radius: 6px;
-    letter-spacing: 1.5px;
-    &:hover {
-      box-shadow: 2px 5px 10px rgba(0, 0, 0.1, 0.2);
-    }
-    &:focus,
-    &:active {
-      box-shadow: none;
-    }
-  }
 `
 
 export default class RSVP extends Component {
@@ -133,9 +43,9 @@ export default class RSVP extends Component {
     const { vegetarian, name, amount, meat, xmail } = this.state
     if (
       name.length > 4 &&
+      amount >= 1 &&
       vegetarian + meat <= amount &&
       amount <= 10 &&
-      amount >= 1 &&
       xmail.length > 5
     ) {
       this.setState({ disabled: false, buttonText: 'Répondez' })
@@ -160,7 +70,7 @@ export default class RSVP extends Component {
     let bodyThanks = ''
     let bodyNotif = ''
     this.setState({ disabled: true })
-    if (this.state.radios === 'decline') {
+    if (this.state.rsvp === 'decline') {
       bodyThanks = `Thank you!<br/><br/>We appreiciate your timely response.<br/><br/>
       We are sorry to hear you won't be joining us, but the next time you see us...<br/>
       We'll be married. So I mean, we are stoked. And we look forward to it!<br/>
@@ -173,10 +83,12 @@ export default class RSVP extends Component {
       <p>Someone declined :( Hopefully they had a good reason</p>
       Who? ${this.state.name}<br/>
       ${
-        this.state.note.length > 1 ? 'Note: ' + this.state.note + '<br/>' : null
+        this.state.note.length > 1
+          ? 'Note: ' + this.state.note + '<br/>'
+          : 'No note<br/>'
       }
       On the bright side <3 they saved us money! <3 <3 <3`
-    } else {
+    } else if (this.state.rsvp === 'accept') {
       bodyThanks = `Thank you!<br/><br/>We appreiciate your timely response!<br/><br/>
       We will personally be in touch soon via the email you address provided to confirm. (${
         this.state.xmail
@@ -197,9 +109,13 @@ export default class RSVP extends Component {
       Vegetarians? ${this.state.vegetarian}<br/>
       Meat Eaters? ${this.state.meat}<br/>
       ${
-        this.state.note.length > 1 ? 'Note: ' + this.state.note + '<br/>' : null
+        this.state.note.length > 1
+          ? 'Note: ' + this.state.note + '<br/>'
+          : 'No note<br/>'
       }
       Love <3 is in the air <3 <3 <3`
+    } else {
+      console.error('something went wrong')
     }
     await this.setState(
       {
