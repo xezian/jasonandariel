@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
 import { EMAIL_MUTATION, client } from './Checkout'
-import styled from 'styled-components'
 import { navigate } from 'gatsby'
-import Card from './rsvpStyles'
+import styled from 'styled-components'
+import Card from './RSVPStyles'
 
 const ViewBox = styled.div`
   width: 100%;
