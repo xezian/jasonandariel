@@ -48,6 +48,8 @@ summary:focus {
 details[open] details[open], details[open] details[open] ~ * {
   background-color: #eeeeee46;
   border: 1px solid #eeeeee;
+  border-radius: 3px;
+  padding: 5px;
 }
 
 details[open] summary ~ * {
@@ -129,6 +131,9 @@ select,
 textarea {
   font: inherit;
   margin: 0;
+}
+textarea:focus {
+  outline: 0;
 }
 optgroup {
   font-weight: 700;

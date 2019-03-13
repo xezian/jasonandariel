@@ -252,27 +252,43 @@ const Checkout = class extends React.Component {
                     }}
                   />
                 </label>
-                <details>
+                <details
+                  style={{
+                    width: `90%`,
+                    border: `inherit`,
+                    backgroundColor: `inherit`,
+                    borderRadius: `3px`,
+                  }}
+                >
                   <summary>Optional Note</summary>
                   <br />
-                  <label htmlFor="note">
-                    Note:{' '}
+                  <div
+                    style={{
+                      display: `flex`,
+                      flexDirection: `column`,
+                      alignItems: `center`,
+                    }}
+                  >
+                    <label htmlFor="note">Note: </label>
                     <textarea
                       content-editable="true"
                       name="note"
                       value={this.state.note}
                       onChange={this.changeSomething}
                       style={{
-                        width: `100%`,
+                        width: `90%`,
+                        resize: `vertical`,
+                        border: `3px solid #b03045af`,
                         verticalAlign: `top`,
                         height: `80px`,
                         backgroundColor: `#d1e6ef`,
+                        boxShadow: '5px 5px 25px 0 rgba(46,61,73,.2)',
                         borderRadius: `7px`,
                         margin: `auto`,
                         marginBottom: `10px`,
                       }}
                     />
-                  </label>
+                  </div>
                 </details>
                 <br />
                 <button
