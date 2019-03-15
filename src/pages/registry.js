@@ -62,9 +62,34 @@ const Registry = () => (
             >
               Wedding Gift Fund
             </summary>
-            <br />
-            <Checkout />
-            <br />
+            <div
+              style={{
+                display: `flex`,
+                flexDirection: `column`,
+                alignItems: `center`,
+              }}
+            >
+              <br />
+              <p>
+                We plan to use any financial gifts towards a trip together
+                someplace exciting sometime in the year following our wedding.
+                We have discussed Patagonia, Japan, New Zealand, or Costa Rica
+                as possibilities. With a shared love of the Earth and adventure,
+                we are making it a part of our commitment to one other that we
+                will put time aside and travel somewhere together on a
+                honeymoon. Your gift can simply be a contribution to the fund
+                that makes this possible. We have made it convenient and simple
+                for you to do so.
+              </p>
+              <p>Begin by clicking the word &apos;Contribute&apos; below.</p>
+              <details
+                style={{ backgroundColor: `inherit`, border: `inherit` }}
+              >
+                <summary>Contribute</summary>
+
+                <Checkout />
+              </details>
+            </div>
           </details>
         </li>
         <hr />

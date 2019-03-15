@@ -183,10 +183,6 @@ const Checkout = class extends React.Component {
           return (
             <div style={cardStyles}>
               <h4 style={{ alignSelf: `center` }}>Our Wedding Gift Fund</h4>
-              <p>
-                is an easy way to support our shared adventures and our life
-                together without having to choose a specific item to buy for us.
-              </p>
               <div
                 style={{
                   width: `100%`,
