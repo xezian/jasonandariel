@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import flowerborder from '../images/flowerborder.png'
+import flowerborder2 from '../images/flowerborder2.png'
 
 const Card = styled.div`
   display: flex;
@@ -9,6 +11,10 @@ const Card = styled.div`
   align-items: center;
   padding: 1rem 3rem;
   box-shadow: 5px 5px 25px 0 rgba(46, 61, 73, 0.3);
+  background-image: url(${flowerborder}), url(${flowerborder2});
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
   background-color: #efedec72;
   border-radius: 6px;
   width: 600px;
