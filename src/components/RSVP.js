@@ -1,9 +1,32 @@
 import React, { Component } from 'react'
 import { Mutation } from 'react-apollo'
-import { EMAIL_MUTATION, client } from './Checkout'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
+import gql from 'graphql-tag'
+import { EMAIL_MUTATION, client } from './Checkout'
 import Card from './RSVPStyles'
+
+const RSVP_MUTATION = gql`
+  mutation RSVP_MUTATION(
+    $name: String!
+    $email: String!
+    $amount: Int!
+    $vegetarian: Int
+    $meat: Int
+    $note: String
+  ) {
+    rsvp(
+      name: $name
+      email: $email
+      amount: $amount
+      vegetarian: $vegetarian
+      meat: $meat
+      note: $note
+    ) {
+      message
+    }
+  }
+`
 
 const ViewBox = styled.div`
   width: 100%;
@@ -35,17 +58,26 @@ export default class RSVP extends Component {
   }
 
   changeSomething = event => {
-    const { name, value } = event.target
-    this.setState({ [name]: value }, this.enableButton)
+    const { name, type, value } = event.target
+    const val = type === 'number' ? parseFloat(value) : value
+    this.setState({ [name]: val }, this.enableButton)
+  }
+
+  changeName = e => {
+    const name = e.target.getAttribute('name')
+    this.setState({ [name]: e.target.innerHTML.toString() }, this.enableButton)
   }
 
   enableButton = () => {
     const { vegetarian, name, amount, meat, xmail } = this.state
+    const veg = isNaN(vegetarian) ? 0 : vegetarian
+    const carn = isNaN(meat) ? 0 : meat
+    const peeps = isNaN(amount) ? 0 : amount
     if (
       name.length > 4 &&
-      amount >= 1 &&
-      vegetarian + meat <= amount &&
-      amount <= 10 &&
+      peeps >= 1 &&
+      veg + carn <= peeps &&
+      peeps <= 10 &&
       xmail.length > 5
     ) {
       this.setState({ disabled: false, buttonText: 'Répondez' })
@@ -54,16 +86,16 @@ export default class RSVP extends Component {
     }
   }
 
-  processClick = (e, sendEmails) => {
+  processClick = async (e, sendEmails, submitRsvp) => {
     if (this.state.disabled) {
       this.showHints(e)
+    } else if (this.state.rsvp === 'decline') {
+      this.processSubmit(e, sendEmails)
     } else {
+      const message = await submitRsvp()
+      await this.setState({ buttonText: message.data.rsvp.message })
       this.processSubmit(e, sendEmails)
     }
-  }
-
-  changeName = async e => {
-    await this.setState({ name: e.target.innerHTML.toString() })
   }
 
   processSubmit = async (e, sendEmails) => {
@@ -142,16 +174,29 @@ export default class RSVP extends Component {
       bodyThanks,
       subjectNotif,
       bodyNotif,
+      name,
+      amount,
+      vegetarian,
+      meat,
+      note,
     } = this.state
-    const variables = {
+    const emailVars = {
       email: xmail,
       subjectThanks,
       bodyThanks,
       subjectNotif,
       bodyNotif,
     }
+    const rsvpVars = {
+      email: xmail,
+      name,
+      amount,
+      vegetarian,
+      meat,
+      note,
+    }
     return (
-      <Mutation mutation={EMAIL_MUTATION} client={client} variables={variables}>
+      <Mutation mutation={EMAIL_MUTATION} client={client} variables={emailVars}>
         {(sendEmails, { error, loading }) => {
           if (error) return <div>{error}</div>
           if (loading) return <div>Loading...</div>
@@ -197,6 +242,7 @@ export default class RSVP extends Component {
                     maxLength="500"
                     autoComplete="off"
                     onBlur={this.changeName}
+                    onFocus={this.changeName}
                   />
                 </label>
                 {this.state.hints && (
@@ -206,24 +252,17 @@ export default class RSVP extends Component {
                     )}
                   </div>
                 )}
-                <label htmlFor="xmail">
-                  Email:
-                  <input
+                <label className="namelabel" htmlFor="xmail">
+                  Email&nbsp;
+                  <div
+                    contentEditable
+                    className="email"
                     name="xmail"
                     type="email"
-                    max="10"
-                    value={this.state.xmail}
-                    onChange={this.changeSomething}
-                    autoComplete="something-new"
-                    style={{
-                      width: `170px`,
-                      height: `30px`,
-                      lineHeight: `0px`,
-                      backgroundColor: `#d1e6ef`,
-                      borderRadius: `7px`,
-                      marginBottom: `10px`,
-                      textAlign: `center`,
-                    }}
+                    maxLength="25"
+                    autoComplete="off"
+                    onBlur={this.changeName}
+                    onFocus={this.changeName}
                   />
                 </label>
                 {this.state.hints && (
@@ -236,7 +275,7 @@ export default class RSVP extends Component {
                   </div>
                 )}
                 <label htmlFor="amount">
-                  Number of Guests:
+                  Number of Guests&nbsp;
                   <input
                     name="amount"
                     type="number"
@@ -270,7 +309,7 @@ export default class RSVP extends Component {
                 <span className="taco">🌮 Taco preference 🌮</span>
                 <div className="tacos">
                   <label htmlFor="vegetarian">
-                    Vegetarian:
+                    Vegetarian&nbsp;
                     <input
                       name="vegetarian"
                       type="number"
@@ -289,7 +328,7 @@ export default class RSVP extends Component {
                     />
                   </label>
                   <label htmlFor="meat">
-                    Chicken / Carnitas:
+                    Chicken / Carnitas&nbsp;
                     <input
                       name="meat"
                       type="number"
@@ -314,7 +353,7 @@ export default class RSVP extends Component {
                       this.state.amount && (
                       <>
                         Please enter no more diet preferences than there are
-                        Guests! ;)
+                        Guests!)
                       </>
                     )}
                   </div>
@@ -324,7 +363,7 @@ export default class RSVP extends Component {
                   <summary>Optional Note</summary>
                   <br />
                   <label htmlFor="note">
-                    Note:{' '}
+                    Note&nbsp;
                     <textarea
                       name="note"
                       value={this.state.note}
@@ -342,9 +381,25 @@ export default class RSVP extends Component {
                   </label>
                 </details>
                 <br />
-                <button onClick={event => this.processClick(event, sendEmails)}>
-                  {this.state.buttonText}
-                </button>
+                <Mutation
+                  mutation={RSVP_MUTATION}
+                  client={client}
+                  variables={rsvpVars}
+                >
+                  {(submitRsvp, { error, loading }) => {
+                    if (error) console.log(error)
+                    if (loading) return <div>Loading...</div>
+                    return (
+                      <button
+                        onClick={event => {
+                          this.processClick(event, sendEmails, submitRsvp)
+                        }}
+                      >
+                        {this.state.buttonText}
+                      </button>
+                    )
+                  }}
+                </Mutation>
                 <br />
                 <span className="heart">{this.state.rsvpMessage}</span>
               </Card>

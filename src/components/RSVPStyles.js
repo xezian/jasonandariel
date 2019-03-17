@@ -33,7 +33,8 @@ const Card = styled.div`
   }
   input,
   textarea,
-  div.name {
+  div.name,
+  div.email {
     font-family: 'Josefin Slab', georgia, serif;
     border: 1px solid #b03045af;
     &:focus {
@@ -44,7 +45,8 @@ const Card = styled.div`
   details textarea {
     resize: vertical;
   }
-  div.name {
+  div.name,
+  div.email {
     min-width: 200px;
     position: relative;
     word-break: break-all;
@@ -54,6 +56,9 @@ const Card = styled.div`
     border-radius: 7px;
     margin-bottom: 10px;
     text-align: center;
+  }
+  div.email {
+    min-width: 164px;
   }
   .namelabel {
     display: flex;
