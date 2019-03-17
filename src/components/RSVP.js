@@ -190,9 +190,9 @@ export default class RSVP extends Component {
     const rsvpVars = {
       email: xmail,
       name,
-      amount,
-      vegetarian,
-      meat,
+      amount: isNaN(amount) ? 0 : parseInt(amount),
+      vegetarian: isNaN(vegetarian) ? 0 : parseInt(vegetarian),
+      meat: isNaN(meat) ? 0 : parseInt(meat),
       note,
     }
     return (
