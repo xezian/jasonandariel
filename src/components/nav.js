@@ -78,8 +78,8 @@ export default class Nav extends Component {
         displayLetter: 'A',
         displayAs: 'inline-block',
         navPad: '2vh 5vw',
-        top: '850px', // 4 buttons
-        // top: '895px', // 5 buttons
+        // top: '850px', // 4 buttons
+        top: '895px', // 5 buttons
         // top: '940px', // 6 buttons
         // top: '985px', // 7 buttons
       })
@@ -104,9 +104,9 @@ export default class Nav extends Component {
         <Link to="/things-2-do/">Things to Do</Link>
         <Link to="/registry/">Gift Registry</Link>
         <Link to="/where/">Where?</Link>
+        <Link to="/rsvp/">RSVP</Link>
         {/* <Link to="/posts/">Posts</Link> */}
         {/* <Link to="/photos/">Photos</Link> */}
-        {/* <Link to="/rsvp/">RSVP</Link> */}
       </NavStyles>
     )
   }
