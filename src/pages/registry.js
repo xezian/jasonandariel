@@ -81,8 +81,8 @@ const Registry = () => (
                 that makes this possible. We have made it convenient and simple
                 for you to do so.
               </p>
-              <p>Begin by clicking the word &apos;Contribute&apos; below.</p>
               <details
+                open
                 style={{ backgroundColor: `inherit`, border: `inherit` }}
               >
                 <summary>Contribute</summary>
