@@ -71,22 +71,15 @@ const Registry = () => (
             >
               <br />
               <p>
-                We plan to use any financial gifts towards a trip together
-                someplace exciting sometime in the year following our wedding.
-                We have discussed Patagonia, Japan, New Zealand, or Costa Rica
-                as possibilities. With a shared love of the Earth and adventure,
-                we are making it a part of our commitment to one other that we
-                will put time aside and travel somewhere together on a
-                honeymoon. Your gift can simply be a contribution to the fund
-                that makes this possible. We have made it convenient and simple
-                for you to do so.
+                For anyone inclined to gift in the form of cash, we have created
+                a convenient, secure, and simple way to do so right here on our
+                website:
               </p>
+              <p>To open the form, click &apos;Contribute&apos; below.</p>
               <details
-                open
                 style={{ backgroundColor: `inherit`, border: `inherit` }}
               >
                 <summary>Contribute</summary>
-
                 <Checkout />
               </details>
             </div>
