@@ -69,7 +69,7 @@ export default class Nav extends Component {
     displayLetter: 'V',
     displayAs: 'none',
     navPad: '0px',
-    top: '644px',
+    top: '689px',
   }
   openSesame = e => {
     e.preventDefault()
@@ -78,14 +78,14 @@ export default class Nav extends Component {
         displayLetter: 'A',
         displayAs: 'inline-block',
         navPad: '2vh 5vw',
-        // top: '850px', // 4 buttons
-        top: '895px', // 5 buttons
-        // top: '940px', // 6 buttons
-        // top: '985px', // 7 buttons
+        // top: '895px', // 4 buttons
+        top: '940px', // 5 buttons
+        // top: '985px', // 6 buttons
+        // top: '1030px', // 7 buttons
       })
     } else if (this.state.displayLetter === 'A') {
       this.setState({
-        top: '644px',
+        top: '689px',
         displayLetter: 'V',
         navPad: '0px',
         displayAs: 'none',

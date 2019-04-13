@@ -3,7 +3,7 @@ module.exports = {
     title: `Jason & Ariel 2019`,
     bride: `Ariel Anderson`,
     groom: `Jason Leo`,
-    eventStart: `06/29/2019`,
+    eventStart: `20190629T16`,
     description: `Wedding Website for Jason Leo and Ariel Anderson.`,
     author: `@xezian`,
   },
