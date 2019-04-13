@@ -19,14 +19,17 @@ export default class Header extends Component {
   whenExactly = start => {
     const { now } = this.state
     if (moment.duration(start.diff(now)).asSeconds() > 0) {
+      const diff = moment.duration(start.diff(now))
       return (
         <>
-          {moment.duration(start.diff(now)).months()} months,{' '}
-          {moment.duration(start.diff(now)).weeks()} weeks,{' '}
-          {moment.duration(start.diff(now)).days()} days,{' '}
-          {moment.duration(start.diff(now)).hours()} hours,{' '}
-          {moment.duration(start.diff(now)).minutes()} minutes, and{' '}
-          {moment.duration(start.diff(now)).seconds()} seconds to go!
+          {diff.months() > 0 && <>{diff.months()} months, </>}
+          {diff.weeks() > 0 && <>{diff.weeks()} weeks, </>}
+          {diff.days() - diff.weeks() * 7 > 0 && (
+            <>{diff.days() - diff.weeks() * 7} days, </>
+          )}
+          {diff.hours() > 0 && <>{diff.hours()} hours, </>}
+          {diff.minutes() > 0 && <>{diff.minutes()} minutes, </>}and{' '}
+          {diff.seconds()} seconds to go!
         </>
       )
     } else {
