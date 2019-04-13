@@ -8,13 +8,18 @@ import cutout from '../images/desert.svg'
 export default class Header extends Component {
   state = {
     now: moment(),
+    intervalId: '',
   }
   componentDidMount() {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       this.setState({
         now: moment(),
       })
     }, 1000)
+    this.setState({ intervalId })
+  }
+  componentWillUnmount() {
+    clearInterval(this.state.intervalId)
   }
   whenExactly = start => {
     const { now } = this.state
@@ -28,12 +33,13 @@ export default class Header extends Component {
             <>{diff.days() - diff.weeks() * 7} days, </>
           )}
           {diff.hours() > 0 && <>{diff.hours()} hours, </>}
-          {diff.minutes() > 0 && <>{diff.minutes()} minutes, </>}and{' '}
+          {diff.minutes() > 0 && <>{diff.minutes()} minutes, and </>}
           {diff.seconds()} seconds to go!
         </>
       )
     } else {
-      return <>🎊It&apos;s begun!🎊</>
+      clearInterval(this.state.intervalId)
+      return <>🎊 It&apos;s begun! 🎊</>
     }
   }
   render() {
