@@ -27,14 +27,31 @@ export default class Header extends Component {
       const diff = moment.duration(start.diff(now))
       return (
         <>
-          {diff.months() > 0 && <>{diff.months()} months, </>}
-          {diff.weeks() > 0 && <>{diff.weeks()} weeks, </>}
+          {diff.months() > 0 && (
+            <>
+              {diff.months()} month{diff.months() > 1 && 's'},{' '}
+            </>
+          )}
+          {diff.weeks() > 0 && (
+            <>
+              {diff.weeks()} week{diff.weeks() > 1 && 's'},{' '}
+            </>
+          )}
           {diff.days() - diff.weeks() * 7 > 0 && (
             <>{diff.days() - diff.weeks() * 7} days, </>
           )}
-          {diff.hours() > 0 && <>{diff.hours()} hours, </>}
-          {diff.minutes() > 0 && <>{diff.minutes()} minutes, and </>}
-          {diff.seconds()} seconds to go!
+          {diff.hours() > 0 && (
+            <>
+              {diff.hours()} hour{diff.hours() > 1 && 's'},{' '}
+            </>
+          )}
+          {diff.minutes() > 0 && (
+            <>
+              {diff.minutes()} minute{diff.minutes() > 1 && 's'}, and{' '}
+            </>
+          )}
+          {diff.seconds()} second
+          {(diff.seconds() === 0 || diff.seconds() > 1) && 's'} to go!
         </>
       )
     } else {
