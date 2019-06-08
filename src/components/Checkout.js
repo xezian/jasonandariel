@@ -1,15 +1,8 @@
 import React from 'react'
-import ApolloClient from 'apollo-boost'
 import gql from 'graphql-tag'
 import fetch from 'isomorphic-fetch'
 import { Mutation } from 'react-apollo'
-
-const client = new ApolloClient({
-  uri:
-    process.env.NODE_ENV === 'development'
-      ? 'http://localhost:5555'
-      : 'https://xezian-yoga-prod.herokuapp.com/',
-})
+import { client } from '../client'
 
 const EMAIL_MUTATION = gql`
   mutation EMAIL_MUTATION(

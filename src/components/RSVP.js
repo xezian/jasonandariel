@@ -3,7 +3,8 @@ import { Mutation } from 'react-apollo'
 import { navigate } from 'gatsby'
 import styled from 'styled-components'
 import gql from 'graphql-tag'
-import { EMAIL_MUTATION, client } from './Checkout'
+import { EMAIL_MUTATION } from './Checkout'
+import { client } from '../client'
 import Card from './RSVPStyles'
 
 const RSVP_MUTATION = gql`
