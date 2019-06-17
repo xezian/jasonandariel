@@ -35,8 +35,9 @@ const Where = () => (
         </a>
         <br />~
         <br />
-        ...can best be reached by automobile, from one of several possible
-        points of connection.
+        **GPS USERS: FOLLOW DIRECTIONS TO DAVIDSON HILL, NOT SKI BOWL HILL**
+        <br />
+        <br />
       </p>
       <ul>
         <details style={{ width: `100%` }}>
@@ -94,7 +95,7 @@ const Where = () => (
         </details>
       </ul>
       <ul>
-        <details style={{ width: `100%` }}>
+        <details open style={{ width: `100%` }}>
           <summary
             style={{
               display: `flex`,
@@ -106,20 +107,46 @@ const Where = () => (
           </summary>
           <hr />
           <p>
-            Please refer to the{' '}
+            Here is the address on:{' '}
             <a
               href="https://www.google.com/maps/place/264+Thayer+Rd,+Westminster,+VT+05158/@43.120258,-72.4931177,17z"
               target="_blank"
               rel="noopener noreferrer"
               style={{ fontFamily: `inherit` }}
             >
-              Google Maps
-            </a>{' '}
-            or similar service for directions to the loaction. Be prepared to
-            spend a few mintues on a steep, windy old unpaved road to finally
-            reach the site. The road is maintained and should be in great
-            condition at the time, and we will take care to place a few colorful
-            arrows to help you feel confident you are on track.
+              Google Maps.
+            </a>
+            <br />
+            <br />
+            If you are using a GPS to find your way to 264 Thayer Road,
+            Westminster VT (Lisai Ridge), be sure to follow directions up
+            Davidson Hill Road and NOT Ski Bowl Hill!!
+            <br />
+            <br />
+            Directions from Interstate 91 Northbound, Exit 5:
+            <br />
+            <ul>
+              <li>Turn left at T-intersectio.n</li>
+              <li>Turn right onto Back Westminster Rd. Drive 3 miles to end</li>
+              <li>Turn left onto Rte 121. Drive 1/4 mile.</li>
+              <li>
+                Just beyond a tractor barn on the left, look for Davidson Hill
+                Road, a dirt road that forks off the main road. Look for the
+                J&amp;A sign! The road going up the hill is narrow and windy.
+              </li>
+              <li>
+                Take Davidson Hill Road up and up (a bit more than a mile). You
+                will come to a fork (and another sign!).
+              </li>
+              <li>
+                Bear right onto Thayer Rd. Go up one more small rise and you
+                will see wedding signs again at the mailboxes.
+              </li>
+              <li>
+                Turn right into #264 and follow the road to the top of the hill
+                for parking.
+              </li>
+            </ul>
           </p>
         </details>
       </ul>
